@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex as child should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 2 3;
+  -ms-flex: 1 2 3;
+  flex: 1 2 3;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 2;
+  -ms-flex-negative: 2;
+  flex-shrink: 2;
+  -webkit-flex-basis: 3;
+  -ms-flex-preferred-size: 3;
+  flex-basis: 3;
+  -webkit-order: 5;
+  -ms-flex-order: 5;
+  order: 5;
+  -webkit-align-self: baseline;
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
+}
+
+<div
+  class="c0 c1"
+  order="5"
+/>
+`;
+
+exports[`Flex as parent should render with defaults 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+<div
+  class="c0 c1"
+/>
+`;
+
+exports[`Flex as parent should render with defined props for flex parent 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+  gap: 10px;
+}
+
+<div
+  class="c0 c1"
+  wrap="wrap"
+/>
+`;

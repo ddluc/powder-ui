@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Area should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  grid-area: leftpanel;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-align-self: end;
+  -ms-flex-item-align: end;
+  align-self: end;
+}
+
+<div
+  class="c0 c1"
+/>
+`;
+
+exports[`Cell should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  -webkit-align-self: end;
+  -ms-flex-item-align: end;
+  align-self: end;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
+<div
+  class="c0 c1"
+/>
+`;
+
+exports[`Grid should render with defaults 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  display: grid;
+}
+
+<div
+  class="c0 c1"
+/>
+`;
+
+exports[`Grid should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  display: grid;
+  grid-template-columns: 80px 1fr 250px 2fr;
+  grid-template-rows: repeat(3,60px);
+  -webkit-column-gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+  class="c0 c1"
+/>
+`;
+
+exports[`Grid should render with template areas 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  display: grid;
+  grid-template-columns: 80px 1fr 250px 2fr;
+  grid-template-rows: repeat(3,60px);
+  grid-template-areas: "header header header header" "leftpanel content content rightpanel" ". footer footer .";
+  -webkit-column-gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+  class="c0 c1"
+/>
+`;

@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should render 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c2 {
+  font-size: 12px;
+  display: auto;
+  color: #3E4242;
+}
+
+.c1 {
+  display: block;
+  position: relative;
+  text-align: left;
+}
+
+.c4 {
+  font-style: italic;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+  overflow-y: hidden;
+  color: #3E4242;
+  height: 0px;
+  -webkit-transition: height .1s ease-in,color 0s linear .2s;
+  transition: height .1s ease-in,color 0s linear .2s;
+}
+
+.c3 {
+  display: block;
+  margin-top: 4px;
+  border: solid 1px #A5B0AE;
+  border-radius: 3px;
+  color: #3E4242;
+  padding: 10px 8px 10px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-transition: box-shadow .15s ease-in-out;
+  transition: box-shadow .15s ease-in-out;
+}
+
+.c3:focus {
+  border-color: #3FD4C0;
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c3:disabled {
+  border-color: #C4C4C4;
+  background-color: #EDEDED;
+}
+
+.c3::-webkit-input-placeholder {
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #69706F;
+}
+
+.c3::-moz-placeholder {
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #69706F;
+}
+
+.c3:-ms-input-placeholder {
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #69706F;
+}
+
+.c3::placeholder {
+  font-family: Lato,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #69706F;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    for="name"
+  >
+    <span
+      class="c2"
+    >
+      First Name
+    </span>
+    <input
+      aria-label="First Name"
+      class="c3"
+      id="name"
+      name="name"
+      value="John Doe"
+    />
+  </label>
+  <div
+    class="c4"
+  />
+</div>
+`;

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography should render a link 1`] = `
+.c0 {
+  font-family: IBM Plex Sans;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: 0px 0px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 16px;
+  color: #42AD09;
+  border-bottom: none;
+  border-color: none;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #052E10;
+  border-color: #052E10;
+  border-bottom: solid 2px;
+}
+
+.c0:active {
+  color: #185C2A;
+  border-color: #185C2A;
+  border-bottom: solid 1px;
+}
+
+.c0:visited {
+  color: #C3F9CD;
+}
+
+<a
+  class="c0"
+  href="#"
+  target="_blank"
+>
+  Heading Two
+</a>
+`;
+
+exports[`Typography should render a subtitle 1`] = `
+.c0 {
+  font-family: IBM Plex Sans;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: IBM Plex Mono;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+<h2
+  class="c0"
+>
+  Heading Two
+</h2>
+`;
+
+exports[`Typography should render a title 1`] = `
+.c0 {
+  font-family: IBM Plex Sans;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: IBM Plex Mono;
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 600;
+}
+
+<h1
+  class="c0"
+>
+  Heading One
+</h1>
+`;
+
+exports[`Typography should render body text 1`] = `
+.c0 {
+  font-family: IBM Plex Sans;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+<p
+  class="c0"
+>
+  Some Text
+</p>
+`;

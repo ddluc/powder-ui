@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scale should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  width: 1200px;
+}
+
+@media screen and (max-width:960px) {
+  .c1 {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width:720px) {
+  .c1 {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .c1 {
+    width: 80%;
+  }
+}
+
+<div
+  class="c0 c1"
+/>
+`;

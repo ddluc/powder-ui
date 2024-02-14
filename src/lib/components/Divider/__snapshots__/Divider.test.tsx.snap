@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider should render 1`] = `
+.c0 {
+  position: relative;
+  border-bottom: solid 1px;
+  border-color: #E1EFED;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  height: 1px;
+  width: 100%;
+  margin-top: undefined;
+  margin-bottom: undefined;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+<hr
+  class="c0"
+  type="horizontal"
+/>
+`;

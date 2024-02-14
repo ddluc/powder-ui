@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block should render with defaults 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`Block should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 2px;
+  right: 3px;
+  left: 1px;
+  bottom: 4px;
+  margin: 10px 20px 5px 3px;
+  padding: 3px 12px 6px 9px;
+  opacity: 1;
+  border: solid 1px #EDEDED;
+  background-color: red;
+  background-position: 50% 50%;
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-size: contain;
+  outline: none;
+  text-align: center;
+  overflow: hidden;
+  zIndex: 1;
+  float: right;
+}
+
+<div
+  class="c0"
+  display="block"
+  height="100px"
+  opacity="1"
+  overflow="hidden"
+  width="100px"
+/>
+`;

@@ -1,0 +1,64 @@
+/**
+ * "off" or 0 - turn the rule off
+ * "warn" or 1 - turn the rule on as a warning (doesn't affect exit code)
+ * "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
+ */
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "ignorePatterns": ["**/*.test.ts", "**/*.test.tsx", "**/*.html"],
+  "globals": {
+    "React": true,
+    "JSX": true,
+    "NodeJS": false
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "react": {
+        "version": "detect"
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true,
+        "bracketSameLine": false,
+        "semi": true,
+        "printWidth": 100,
+        "trailingComma": "none",
+        "useTabs": false
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    // Set a max length
+    "max-len": ["warn", { "code": 120 }],
+    // Disable react prop-types (not needed, since the project uses Typescript)
+    "react/prop-types": ["off"],
+    // Disable prop-types default props
+    "react/require-default-props": ["off"],
+    // Allow for props spreading
+    "react/jsx-props-no-spreading": ["off"]
+  }
+}

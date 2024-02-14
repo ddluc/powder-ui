@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scale should render with overflow-x 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  overflow-x: scroll;
+}
+
+<div
+  class="c0 c1"
+  direction="x"
+/>
+`;
+
+exports[`Scale should render with overflow-y 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 {
+  overflow-y: scroll;
+}
+
+<div
+  class="c0 c1"
+  direction="y"
+/>
+`;

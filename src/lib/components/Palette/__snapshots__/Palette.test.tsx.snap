@@ -1,0 +1,378 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Palette should render with defined props 1`] = `
+.c2 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #052E10;
+}
+
+.c3 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #185C2A;
+}
+
+.c4 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #4FAD6A;
+}
+
+.c5 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #85DA9A;
+}
+
+.c6 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #C3F9CD;
+}
+
+.c8 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #052E29;
+}
+
+.c9 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #275C58;
+}
+
+.c10 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #3FD4C0;
+}
+
+.c11 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #80D9D7;
+}
+
+.c12 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #B7EFFA;
+}
+
+.c13 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #84DB6B;
+}
+
+.c14 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #F0DA72;
+}
+
+.c15 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #DB7B71;
+}
+
+.c16 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  border: solid 1px #EDEDED;
+  background-color: #FFFFFF;
+}
+
+.c17 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #000000;
+}
+
+.c18 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #C4C4C4;
+}
+
+.c19 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #EDEDED;
+}
+
+.c20 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #3E4242;
+}
+
+.c21 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #69706F;
+}
+
+.c22 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #A5B0AE;
+}
+
+.c23 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #E1EFED;
+}
+
+.c24 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #EDFCFA;
+}
+
+.c25 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #F7804A;
+}
+
+.c26 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #D4CC3F;
+}
+
+.c27 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #52EBAB;
+}
+
+.c28 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #473FD4;
+}
+
+.c29 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 5px 5px 5px;
+  background-color: #75DA85;
+}
+
+.c1 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 20px 5px 5px;
+  background-color: #42AD09;
+}
+
+.c7 {
+  height: 40px;
+  width: 40px;
+  margin: 5px 20px 5px 5px;
+  background-color: #3FD4C0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+<div>
+  <p>
+    Primary
+  </p>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+      color="primary"
+    />
+    <div
+      class="c2"
+      color="primary"
+    />
+    <div
+      class="c3"
+      color="primary"
+    />
+    <div
+      class="c4"
+      color="primary"
+    />
+    <div
+      class="c5"
+      color="primary"
+    />
+    <div
+      class="c6"
+      color="primary"
+    />
+  </div>
+  <p>
+    Accent
+  </p>
+  <div
+    class="c0"
+  >
+    <div
+      class="c7"
+      color="accent"
+    />
+    <div
+      class="c8"
+      color="accent"
+    />
+    <div
+      class="c9"
+      color="accent"
+    />
+    <div
+      class="c10"
+      color="accent"
+    />
+    <div
+      class="c11"
+      color="accent"
+    />
+    <div
+      class="c12"
+      color="accent"
+    />
+  </div>
+  <p>
+    Success | Warning | Danger
+  </p>
+  <div
+    class="c0"
+  >
+    <div
+      class="c13"
+      color="success"
+    />
+    <div
+      class="c14"
+      color="warning"
+    />
+    <div
+      class="c15"
+      color="danger"
+    />
+  </div>
+  <p>
+    Common
+  </p>
+  <div
+    class="c0"
+  >
+    <div
+      class="c16"
+      color="background"
+    />
+    <div
+      class="c17"
+      color="foreground"
+    />
+    <div
+      class="c18"
+      color="grey"
+    />
+    <div
+      class="c19"
+      color="lightgrey"
+    />
+  </div>
+  <p>
+    Neutral
+  </p>
+  <div
+    class="c0"
+  >
+    <div
+      class="c20"
+      color="neutral"
+    />
+    <div
+      class="c21"
+      color="neutral"
+    />
+    <div
+      class="c22"
+      color="neutral"
+    />
+    <div
+      class="c23"
+      color="neutral"
+    />
+    <div
+      class="c24"
+      color="neutral"
+    />
+  </div>
+  <p>
+    Visualizations
+  </p>
+  <div
+    class="c0"
+  >
+    <div
+      class="c25"
+      color="visualization"
+    />
+    <div
+      class="c26"
+      color="visualization"
+    />
+    <div
+      class="c27"
+      color="visualization"
+    />
+    <div
+      class="c28"
+      color="visualization"
+    />
+    <div
+      class="c29"
+      color="visualization"
+    />
+  </div>
+</div>
+`;

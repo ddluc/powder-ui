@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render as checked 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c3 {
+  font-style: italic;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+  overflow-y: hidden;
+  color: #3E4242;
+  height: 0px;
+  -webkit-transition: height .1s ease-in,color 0s linear .2s;
+  transition: height .1s ease-in,color 0s linear .2s;
+}
+
+.c1 {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.c1 + label:before {
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  width: 23px;
+  height: 23px;
+  background-color: #EDFCFA;
+  border: solid 1px;
+  border-color: #3FD4C0;
+  border-radius: 3px;
+  -webkit-transition: box-shadow 250ms ease-out;
+  transition: box-shadow 250ms ease-out;
+}
+
+.c1 + label svg {
+  position: absolute;
+  pointer-events: none;
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  fill: #FFFFFF;
+  display: block;
+  -webkit-animation: gKeKO 250ms ease both;
+  animation: gKeKO 250ms ease both;
+}
+
+.c1:hover + label:before {
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c1:focus + label:before {
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c1:checked + label:before {
+  background-color: #3FD4C0;
+}
+
+.c1:disabled + label:before {
+  box-shadow: none;
+  background: #C4C4C4;
+}
+
+.c1:disabled + label {
+  color: #EDFCFA;
+  cursor: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #69706F;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.c2 span {
+  margin-left: 8px;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-invalid="false"
+    aria-label="A Checkbox"
+    checked=""
+    class="c1"
+    name="checkbox"
+    type="checkbox"
+  />
+  <label
+    class="c2"
+  >
+    <svg
+      height="10px"
+      width="10px"
+    />
+    <span>
+      A Checkbox
+    </span>
+  </label>
+  <div
+    class="c3"
+  />
+</div>
+`;
+
+exports[`Checkbox should render as disabled 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c3 {
+  font-style: italic;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+  overflow-y: hidden;
+  color: #3E4242;
+  height: 0px;
+  -webkit-transition: height .1s ease-in,color 0s linear .2s;
+  transition: height .1s ease-in,color 0s linear .2s;
+}
+
+.c1 {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.c1 + label:before {
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  width: 23px;
+  height: 23px;
+  background-color: #EDFCFA;
+  border: solid 1px;
+  border-color: #3FD4C0;
+  border-radius: 3px;
+  -webkit-transition: box-shadow 250ms ease-out;
+  transition: box-shadow 250ms ease-out;
+}
+
+.c1 + label svg {
+  position: absolute;
+  pointer-events: none;
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  fill: #FFFFFF;
+  display: block;
+  -webkit-animation: gKeKO 250ms ease both;
+  animation: gKeKO 250ms ease both;
+}
+
+.c1:hover + label:before {
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c1:focus + label:before {
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c1:checked + label:before {
+  background-color: #3FD4C0;
+}
+
+.c1:disabled + label:before {
+  box-shadow: none;
+  background: #C4C4C4;
+}
+
+.c1:disabled + label {
+  color: #EDFCFA;
+  cursor: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #A5B0AE;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.c2 span {
+  margin-left: 8px;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-invalid="false"
+    aria-label="A Checkbox"
+    checked=""
+    class="c1"
+    disabled=""
+    name="checkbox"
+    type="checkbox"
+  />
+  <label
+    class="c2"
+    disabled=""
+  >
+    <svg
+      height="10px"
+      width="10px"
+    />
+    <span>
+      A Checkbox
+    </span>
+  </label>
+  <div
+    class="c3"
+  />
+</div>
+`;
+
+exports[`Checkbox should render as error 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c3 {
+  font-style: italic;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+  overflow-y: hidden;
+  color: #DB7B71;
+  height: 20px;
+  -webkit-transition: height .1s ease-in,color 0s linear .2s;
+  transition: height .1s ease-in,color 0s linear .2s;
+}
+
+.c1 {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.c1 + label:before {
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  width: 23px;
+  height: 23px;
+  background-color: #DB7B711A;
+  border: solid 1px;
+  border-color: #DB7B71;
+  border-radius: 3px;
+  -webkit-transition: box-shadow 250ms ease-out;
+  transition: box-shadow 250ms ease-out;
+}
+
+.c1 + label svg {
+  position: absolute;
+  pointer-events: none;
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  fill: #DB7B71CC;
+  display: block;
+  -webkit-animation: gKeKO 250ms ease both;
+  animation: gKeKO 250ms ease both;
+}
+
+.c1:hover + label:before {
+  box-shadow: #DB7B714D 0px 0px 0px 2px;
+}
+
+.c1:focus + label:before {
+  box-shadow: #DB7B714D 0px 0px 0px 2px;
+}
+
+.c1:checked + label:before {
+  background-color: #DB7B711A;
+}
+
+.c1:disabled + label:before {
+  box-shadow: none;
+  background: #C4C4C4;
+}
+
+.c1:disabled + label {
+  color: #EDFCFA;
+  cursor: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #DB7B71;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.c2 span {
+  margin-left: 8px;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-invalid="true"
+    aria-label="A Checkbox"
+    class="c1"
+    name="checkbox"
+    type="checkbox"
+  />
+  <label
+    class="c2"
+  >
+    <span>
+      A Checkbox
+    </span>
+  </label>
+  <div
+    class="c3"
+  >
+    An error
+  </div>
+</div>
+`;
+
+exports[`Checkbox should render as unchecked 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c3 {
+  font-style: italic;
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: IBM Plex Sans;
+  overflow-y: hidden;
+  color: #3E4242;
+  height: 0px;
+  -webkit-transition: height .1s ease-in,color 0s linear .2s;
+  transition: height .1s ease-in,color 0s linear .2s;
+}
+
+.c1 {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.c1 + label:before {
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  width: 23px;
+  height: 23px;
+  background-color: #EDFCFA;
+  border: solid 1px;
+  border-color: #3FD4C0;
+  border-radius: 3px;
+  -webkit-transition: box-shadow 250ms ease-out;
+  transition: box-shadow 250ms ease-out;
+}
+
+.c1 + label svg {
+  position: absolute;
+  pointer-events: none;
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  fill: #FFFFFF;
+  display: block;
+  -webkit-animation: gKeKO 250ms ease both;
+  animation: gKeKO 250ms ease both;
+}
+
+.c1:hover + label:before {
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c1:focus + label:before {
+  box-shadow: #B7EFFA 0px 0px 0px 2px;
+}
+
+.c1:checked + label:before {
+  background-color: #3FD4C0;
+}
+
+.c1:disabled + label:before {
+  box-shadow: none;
+  background: #C4C4C4;
+}
+
+.c1:disabled + label {
+  color: #EDFCFA;
+  cursor: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #69706F;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.c2 span {
+  margin-left: 8px;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-invalid="false"
+    aria-label="A Checkbox"
+    class="c1"
+    name="checkbox"
+    type="checkbox"
+  />
+  <label
+    class="c2"
+  >
+    <span>
+      A Checkbox
+    </span>
+  </label>
+  <div
+    class="c3"
+  />
+</div>
+`;

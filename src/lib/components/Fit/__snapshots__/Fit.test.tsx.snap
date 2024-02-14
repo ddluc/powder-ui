@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fit should render with defined props 1`] = `
+.c0 {
+  display: block;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+.c1 > * {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-position: 50% 50%;
+}
+
+<div
+  class="c0 c1"
+>
+  <img
+    alt="A fun image"
+    src="#"
+  />
+  ;
+</div>
+`;

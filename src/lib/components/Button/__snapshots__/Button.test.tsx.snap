@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render as a default button 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: 'space-beteween';
+  -webkit-justify-content: 'space-beteween';
+  -ms-flex-pack: 'space-beteween';
+  justify-content: 'space-beteween';
+  gap: 0px 8px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #42AD09;
+  color: #FFFFFF;
+  border: solid 1px;
+  border-color: #42AD09;
+  border-radius: 3px;
+  font-family: IBM Plex Mono;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px;
+  max-width: 220px;
+  outline: none;
+  -webkit-transition: -webkit-transform 250ms ease, box-shadow 250ms ease;
+  -webkit-transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  fill: #FFFFFF;
+}
+
+.c0:focus {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+}
+
+.c0:hover {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c0:disabled {
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  background-color: #E1EFED;
+  border-color: #E1EFED;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<button
+  class="c0"
+  type="button"
+>
+  <span
+    class="c1"
+  >
+    A Button
+  </span>
+</button>
+`;
+
+exports[`Button should render as a minimal button 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: 'space-beteween';
+  -webkit-justify-content: 'space-beteween';
+  -ms-flex-pack: 'space-beteween';
+  justify-content: 'space-beteween';
+  gap: 0px 8px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #42AD09;
+  color: #FFFFFF;
+  border: solid 1px;
+  border-color: #42AD09;
+  border-radius: 3px;
+  font-family: IBM Plex Mono;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px;
+  max-width: 220px;
+  outline: none;
+  -webkit-transition: -webkit-transform 250ms ease, box-shadow 250ms ease;
+  -webkit-transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  fill: #FFFFFF;
+}
+
+.c0:focus {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+}
+
+.c0:hover {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c0:disabled {
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  background-color: #E1EFED;
+  border-color: #E1EFED;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c1 {
+  padding: 2px;
+  background-color: transparent;
+  color: #69706F;
+  fill: #69706F;
+  border: none;
+}
+
+.c1:focus {
+  border: none;
+  box-shadow: #E1EFED 0px 0px 0px 2px;
+}
+
+.c1:hover {
+  border: none;
+  box-shadow: none;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c1:disabled {
+  background-color: transparent;
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  border: none;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c2 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  <span
+    class="c2"
+  >
+    A Button
+  </span>
+</button>
+`;
+
+exports[`Button should render as a secondary button 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: 'space-beteween';
+  -webkit-justify-content: 'space-beteween';
+  -ms-flex-pack: 'space-beteween';
+  justify-content: 'space-beteween';
+  gap: 0px 8px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #42AD09;
+  color: #FFFFFF;
+  border: solid 1px;
+  border-color: #42AD09;
+  border-radius: 3px;
+  font-family: IBM Plex Mono;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px;
+  max-width: 220px;
+  outline: none;
+  -webkit-transition: -webkit-transform 250ms ease, box-shadow 250ms ease;
+  -webkit-transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  fill: #FFFFFF;
+}
+
+.c0:focus {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+}
+
+.c0:hover {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c0:disabled {
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  background-color: #E1EFED;
+  border-color: #E1EFED;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c1 {
+  background-color: transparent;
+  color: #69706F;
+  border-color: #A5B0AE;
+  fill: #69706F;
+}
+
+.c1:focus {
+  border-color: #A5B0AE;
+  box-shadow: #E1EFED 0px 0px 0px 2px;
+}
+
+.c1:hover {
+  border-color: #A5B0AE;
+  box-shadow: #E1EFED 0px 0px 0px 2px;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c1:disabled {
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  background-color: #E1EFED;
+  border-color: #E1EFED;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c2 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  <span
+    class="c2"
+  >
+    A Button
+  </span>
+</button>
+`;
+
+exports[`Button should render as an intent button 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: 'space-beteween';
+  -webkit-justify-content: 'space-beteween';
+  -ms-flex-pack: 'space-beteween';
+  justify-content: 'space-beteween';
+  gap: 0px 8px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #42AD09;
+  color: #FFFFFF;
+  border: solid 1px;
+  border-color: #42AD09;
+  border-radius: 3px;
+  font-family: IBM Plex Mono;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px;
+  max-width: 220px;
+  outline: none;
+  -webkit-transition: -webkit-transform 250ms ease, box-shadow 250ms ease;
+  -webkit-transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  fill: #FFFFFF;
+}
+
+.c0:focus {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+}
+
+.c0:hover {
+  border-color: #4FAD6A;
+  box-shadow: #C3F9CD 0px 0px 0px 2px;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c0:disabled {
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  background-color: #E1EFED;
+  border-color: #E1EFED;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c1 {
+  color: #FFFFFF;
+  background-color: #DB7B71;
+  border-color: #DB7B71;
+  fill: #FFFFFF;
+}
+
+.c1:focus {
+  border-color: #DB7B71;
+  box-shadow: #DB7B7166 0px 0px 0px 2px;
+}
+
+.c1:hover {
+  border-color: #DB7B71;
+  box-shadow: #DB7B7166 0px 0px 0px 2px;
+  -webkit-transform: translate(0px,-2px);
+  -ms-transform: translate(0px,-2px);
+  transform: translate(0px,-2px);
+  cursor: pointer;
+}
+
+.c1:disabled {
+  color: #A5B0AE;
+  fill: #A5B0AE;
+  background-color: #E1EFED;
+  border-color: #E1EFED;
+  box-shadow: none;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  cursor: not-allowed;
+}
+
+.c2 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  <span
+    class="c2"
+  >
+    A Button
+  </span>
+</button>
+`;

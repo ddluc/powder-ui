@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton as a box should render with pulse animation 1`] = `
+.c0 {
+  width: 200px;
+  height: 100px;
+}
+
+.c1 {
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  position: relative;
+  padding: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.c1:hover,
+.c1:focus,
+.c1:active {
+  border: none;
+  cursor: default;
+  outline: none;
+}
+
+.c1::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: 2000ms ease-in lbZBOL forwards infinite;
+  animation: 2000ms ease-in lbZBOL forwards infinite;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  content: '';
+}
+
+<div
+  class="c0"
+  height="100"
+  type="box"
+  width="200"
+>
+  <div
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Skeleton as a box should render with shimmer animation 1`] = `
+.c0 {
+  width: 200px;
+  height: 100px;
+}
+
+.c1 {
+  height: 100%;
+  width: 100%;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(to right,#f3f3f3 0%,#f9f9f9 20%,#f9f9f9 40%,#f3f3f3 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 800px;
+  border-radius: 3px;
+  position: relative;
+  padding: 0;
+  box-shadow: none;
+  pointer-events: none;
+  -webkit-animation: 1000ms linear forwards eUYZfv infinite;
+  animation: 1000ms linear forwards eUYZfv infinite;
+}
+
+.c1:hover,
+.c1:focus,
+.c1:active {
+  border: none;
+  cursor: default;
+  outline: none;
+}
+
+<div
+  class="c0"
+  height="100"
+  type="box"
+  width="200"
+>
+  <div
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Skeleton as a box should render with wave animation 1`] = `
+.c0 {
+  width: 200px;
+  height: 100px;
+}
+
+.c1 {
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  position: relative;
+  padding: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.c1:hover,
+.c1:focus,
+.c1:active {
+  border: none;
+  cursor: default;
+  outline: none;
+}
+
+.c1::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: 3000ms ease-in-out dQLxgQ infinite;
+  animation: 3000ms ease-in-out dQLxgQ infinite;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  content: '';
+}
+
+<div
+  class="c0"
+  height="100"
+  type="box"
+  width="200"
+>
+  <div
+    class="c1"
+  />
+</div>
+`;
+
+exports[`Skeleton as a circle should render as circle 1`] = `
+.c0 {
+  width: 200px;
+  height: 200px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+
+.c1 {
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  position: relative;
+  padding: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.c1:hover,
+.c1:focus,
+.c1:active {
+  border: none;
+  cursor: default;
+  outline: none;
+}
+
+.c1::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: 3000ms ease-in-out dQLxgQ infinite;
+  animation: 3000ms ease-in-out dQLxgQ infinite;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  content: '';
+}
+
+<div
+  class="c0"
+  height="200"
+  type="circle"
+  width="200"
+>
+  <div
+    class="c1"
+  />
+</div>
+`;
