@@ -51,13 +51,6 @@ export interface Props extends BaseCSSProperties {
     | 'first baseline'
     | 'last baseline';
   gap?: string;
-  // Properties for flex items
-  flex?: string;
-  grow?: number | 'auto' | 'initial' | 'inherit';
-  shrink?: number | 'auto' | 'initial' | 'inherit';
-  basis?: string | number | 'auto' | 'initial' | 'inherit';
-  order?: number;
-  alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 }
 
 // Extend the Component props with the injected theme
@@ -67,7 +60,7 @@ export interface ThemedProps extends Props {
 
 // Defined a styled component implmementation
 const Flex = styled(Block)<Props>`
-  display: flex;
+  display: ${({ display = 'flex' }: ThemedProps) => display};
   flex-direction: ${({ column, reverse }: ThemedProps) => {
     let direction = 'row';
     if (column) direction = 'column';
@@ -86,12 +79,6 @@ const Flex = styled(Block)<Props>`
   }};
   ${({ alignContent }: ThemedProps) => alignContent && `align-content: ${alignContent}`};
   ${({ gap }: ThemedProps) => gap && `gap: ${gap}`};
-  ${({ flex }: ThemedProps) => flex && `flex: ${flex}`};
-  ${({ grow }: ThemedProps) => grow !== undefined && `flex-grow: ${grow}`};
-  ${({ shrink }: ThemedProps) => shrink !== undefined && `flex-shrink: ${shrink}`};
-  ${({ basis }: ThemedProps) => basis !== undefined && `flex-basis: ${basis}`};
-  ${({ order }: ThemedProps) => order !== undefined && `order: ${order}`};
-  ${({ alignSelf }: ThemedProps) => alignSelf && `align-self: ${alignSelf}`};
 `;
 
 export default Flex;

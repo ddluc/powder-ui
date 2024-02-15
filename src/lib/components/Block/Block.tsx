@@ -50,6 +50,12 @@ const StyledBlock = styled.div<Props>`
   ${({ overflow }: ThemedProps) => overflow && `overflow: ${overflow}`};
   ${({ zIndex }: ThemedProps) => zIndex && `z-index: ${zIndex}`};
   ${({ float }: ThemedProps) => float && `float: ${float}`};
+  ${({ flex }: ThemedProps) => flex && `flex: ${flex}`};
+  ${({ grow }: ThemedProps) => grow !== undefined && `flex-grow: ${grow}`};
+  ${({ shrink }: ThemedProps) => shrink !== undefined && `flex-shrink: ${shrink}`};
+  ${({ basis }: ThemedProps) => basis !== undefined && `flex-basis: ${basis}`};
+  ${({ order }: ThemedProps) => order !== undefined && `order: ${order}`};
+  ${({ alignSelf }: ThemedProps) => alignSelf && `align-self: ${alignSelf}`};
 `;
 
 // Wrap the styled component as a react component for better type

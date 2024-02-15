@@ -54,6 +54,13 @@ export type BaseCSSProperties = {
   overflow?: OverflowCSSProperty;
   textAlign?: TextAlignCSSProperty;
   boxSizing?: BoxSizingCSSProperty;
+  // Flex Items
+  flex?: string;
+  grow?: number | 'auto' | 'initial' | 'inherit';
+  shrink?: number | 'auto' | 'initial' | 'inherit';
+  basis?: string | number | 'auto' | 'initial' | 'inherit';
+  order?: number;
+  alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 };
 
 export type AnonymousFunction = (...args: any[]) => any;
