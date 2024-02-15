@@ -20,7 +20,9 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   disabled?: boolean;
   fluid?: boolean;
   color?: string;
+  condensed?: boolean;
   textColor?: string;
+  textSize?: number;
   border?: string;
   radius?: string;
   height?: number;
@@ -50,6 +52,7 @@ const Button = (props: Props): JSX.Element => {
     text,
     color,
     textColor,
+    textSize = null,
     align = 'left',
     border = null,
     radius = null,
@@ -72,6 +75,9 @@ const Button = (props: Props): JSX.Element => {
         textColor={textColor}
         intent={intent}
         variation={variation}
+        width={width}
+        height={height}
+        textSize={textSize}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -81,7 +87,15 @@ const Button = (props: Props): JSX.Element => {
 
   if (variation === 'secondary') {
     return (
-      <SecondaryButton color={color} textColor={textColor} {...buttonProps}>
+      <SecondaryButton
+        color={color}
+        textColor={textColor}
+        textSize={textSize}
+        width={width}
+        height={height}
+        border={border}
+        {...buttonProps}
+      >
         {renderButtonContent()}
       </SecondaryButton>
     );
@@ -89,7 +103,14 @@ const Button = (props: Props): JSX.Element => {
 
   if (variation === 'minimal') {
     return (
-      <MinimalButton color={color} textColor={textColor} {...buttonProps}>
+      <MinimalButton
+        color={color}
+        textColor={textColor}
+        textSize={textSize}
+        width={width}
+        height={height}
+        {...buttonProps}
+      >
         {renderButtonContent()}
       </MinimalButton>
     );
@@ -99,6 +120,7 @@ const Button = (props: Props): JSX.Element => {
     <DefaultButton
       color={color}
       textColor={textColor}
+      textSize={textSize}
       border={border}
       radius={radius}
       height={height}

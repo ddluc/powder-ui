@@ -6,11 +6,14 @@ export interface Props {
   fluid?: boolean;
   color?: string;
   textColor?: string;
+  textSize?: number;
   border?: string;
   radius?: string;
   height?: number;
   width?: number;
   alignment?: string;
+  gap?: number;
+  condensed?: boolean;
   iconPosition?: 'left' | 'right';
 }
 
@@ -28,9 +31,9 @@ export const DefaultButton = styled.button<Props>`
     border || `solid ${theme.border.width} ${theme.palette.primary.main}`};
   border-radius: ${({ theme, radius }) => radius || theme.border.radius.sm};
   font-family: ${({ theme }) => theme.fonts.family.display};
-  font-size: ${({ theme }) => px(theme.fonts.size.small)};
+  font-size: ${({ theme, textSize }) => (textSize ? px(textSize) : px(theme.fonts.size.small))};
   line-height: ${({ theme }) => px(theme.fonts.size.normal + 6)};
-  padding: ${({ theme }) => `${theme.spacing[2]}`};
+  padding: ${({ theme, condensed }) => (condensed ? '0px' : theme.spacing[2])};
 
   ${({ fluid, width }) => {
     if (width) return `width: ${width}px`;
