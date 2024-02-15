@@ -17,7 +17,7 @@ export const Dropdown = styled.div<ThemedProps>`
   height: 16px;
   width: 16px;
   right: 10px;
-  top: 10px;
+  top: 12px;
   transform: rotate(180deg);
   fill: ${({ theme, error }) => {
     if (error) return theme.palette.danger.main;

@@ -12,6 +12,7 @@ export interface ThemedProps extends SelectInputProps {
 export const Input = styled.select<ThemedProps>`
   display: block;
   width: 100%;
+  height: 42px;
   padding: 10px 8px 10px 8px;
   ${({ theme, error }) => {
     if (error) return `border: solid ${theme.border.width} ${theme.palette.danger.main}`;
