@@ -61,13 +61,9 @@ const RangeInput = (props: Props): JSX.Element => {
     onChange
   } = props;
 
-  const [tooltipPosition, setTooltipPosition] = React.useState<string>('0px');
-
-  // Calculate indicator position
-  React.useEffect(() => {
+  const tooltipPosition = React.useMemo(() => {
     const fraction = (value - min) / (max - min);
-    const position = `calc(${fraction * 100}% + ${(0.5 - fraction) * thumbSize}px)`;
-    setTooltipPosition(position);
+    return `calc(${fraction * 100}% + ${(0.5 - fraction) * thumbSize}px)`;
   }, [value, min, max]);
 
   // Handle out of bounds values

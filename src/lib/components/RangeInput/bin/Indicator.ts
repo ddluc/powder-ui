@@ -30,6 +30,7 @@ export const Indicator = styled.div<Props>`
   position: absolute;
   top: 4px;
   transform: translateX(-50%);
+  will-change: left;
   left: ${({ position }) => position};
   opacity: ${({ disabled }) => (disabled ? 0 : 1)};
 
