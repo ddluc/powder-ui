@@ -45,6 +45,7 @@ const MainTemplate: ComponentStory<typeof Table.Table> = (args: TableProps<Data>
               <Table.HeaderCell
                 key={column.key}
                 column={column}
+                align={column.align}
                 sortColumn={sortColumn}
                 sortDirection={sortDirection}
                 onClick={() => onSortColumn(column.key)}
@@ -58,8 +59,8 @@ const MainTemplate: ComponentStory<typeof Table.Table> = (args: TableProps<Data>
               <Table.BodyCell>{row.resort}</Table.BodyCell>
               <Table.BodyCell>{row.description}</Table.BodyCell>
               <Table.BodyCell>{row.terrain}</Table.BodyCell>
-              <Table.BodyCell>{row.elevation}</Table.BodyCell>
-              <Table.BodyCell>{row.runs}</Table.BodyCell>
+              <Table.BodyCell align="right">{row.elevation}</Table.BodyCell>
+              <Table.BodyCell align="right">{row.runs}</Table.BodyCell>
               <Table.BodyCell>
                 <Flex justifyContent="center">
                   <Button variation="default" text="View" />

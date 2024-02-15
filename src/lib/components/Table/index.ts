@@ -2,6 +2,7 @@
 import Table from './Table';
 
 import { Header, Body, Row, HeaderCell, BodyCell } from './bin';
+export type { TableDataRow, TableDataColumn } from './types';
 
 export default {
   Table,

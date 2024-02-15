@@ -5,7 +5,7 @@ import { Flex } from '../../Flex';
 export interface TableSkeletonProps extends BaseSkeletonProps {
   rowCount?: number;
   colCount?: number;
-  spacing: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  spacing?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 }
 
 export const TableSkeleton = ({ rowCount = 5, colCount = 5, spacing }: TableSkeletonProps) => (

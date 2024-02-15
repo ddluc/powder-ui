@@ -10,4 +10,5 @@ export type TableDataColumn = {
   header: string;
   sortable?: boolean;
   width: number;
+  align?: 'left' | 'right' | 'center';
 };

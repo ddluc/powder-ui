@@ -18,8 +18,8 @@ export interface BaseProps<T = object> extends BaseTableProps {
   desc?: boolean;
   children: (args: {
     // Data Props
-    rows?: TableDataRow<T>[];
-    columns?: TableDataColumn[];
+    rows: TableDataRow<T>[];
+    columns: TableDataColumn[];
     // Sort Props
     sortDirection: string;
     sortColumn: Nullable<string>;

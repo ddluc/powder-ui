@@ -43,7 +43,7 @@ export { RangeInput, RangeInputProps } from './lib/components/RangeInput';
 export { Scale, ScaleProps } from './lib/components/Scale';
 export { Scroll, ScrollProps } from './lib/components/Scroll';
 export { Select, SelectProps } from './lib/components/Select';
-export { Sidesheet, SidesheetProps } from './lib/components/Sidesheet';
+export { Sidesheet, SidesheetHeader, SidesheetProps } from './lib/components/Sidesheet';
 export { Skeleton, SkeletonProps } from './lib/components/Skeleton';
 export { Spacer, SpacerProps } from './lib/components/Spacer';
 export { default as Table, TableProps } from './lib/components/Table';
@@ -52,6 +52,7 @@ export { Typography, TextProps } from './lib/components/Typography';
 
 /** Export Types */
 export { CSSTransitionAnimation } from './lib/types';
+export { TableDataRow, TableDataColumn } from './lib/components/Table';
 
 /** Reset CSS */
 export { default as ResetCSS } from './theme/reset';

@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import { px } from '../../../util';
 
 export type Props = {
-  spacing: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  spacing?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   gridlines?: boolean;
-  scrollbar: {
+  scrollbar?: {
     height?: number;
     color?: string;
     background?: string;
     hover?: string;
   };
-  alternate: boolean;
+  alternate?: boolean;
   gridColor?: string;
   headerColor?: string;
   activeColor?: string;
@@ -60,7 +60,6 @@ export const BaseTable = styled.table<Props>`
     // Spacing
     td {
       padding: ${({ spacing, theme }) => theme.spacing[spacing]};
-      vertical-align: middle;
     }
     tr {
       background-color: ${({ alternate, theme }) =>

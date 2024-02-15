@@ -78,6 +78,7 @@ const Button = (props: Props): JSX.Element => {
         width={width}
         height={height}
         textSize={textSize}
+        type={type}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -94,6 +95,7 @@ const Button = (props: Props): JSX.Element => {
         width={width}
         height={height}
         border={border}
+        type={type}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -109,6 +111,7 @@ const Button = (props: Props): JSX.Element => {
         textSize={textSize}
         width={width}
         height={height}
+        type={type}
         {...buttonProps}
       >
         {renderButtonContent()}

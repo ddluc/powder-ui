@@ -26,19 +26,22 @@ const columns: TableDataColumn[] = [
     key: 'terrain',
     header: 'Terrain',
     sortable: false,
+    align: 'left',
     width: 10
   },
   {
     key: 'elevation',
     header: 'Elevation',
     sortable: true,
+    align: 'right',
     width: 15
   },
   {
     key: 'runs',
     header: 'Runs',
     sortable: true,
-    width: 15
+    align: 'right',
+    width: 10
   },
   {
     key: 'actions',
