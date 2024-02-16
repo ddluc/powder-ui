@@ -14,7 +14,8 @@ export const BaseHeaderCell = styled.th<{
   align?: 'left' | 'right' | 'center';
 }>`
   width: ${(props) => (props.width ? `${props.width}%` : 'auto')};
-  font-weight: normal;
+  font-weight: bold;
+  font-size: 14px;
   &:hover {
     ${({ sortable }) => (sortable ? 'cursor: pointer;' : '')};
     div {

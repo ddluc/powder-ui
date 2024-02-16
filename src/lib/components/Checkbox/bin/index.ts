@@ -88,6 +88,7 @@ export const Input = styled.input<Props>`
 // The checkmark label
 export const Label = styled.label<Props>`
   display: flex;
+  height: 32px;
   align-items: center;
   padding: ${({ display }) => {
     if (display === 'card') return '18px 8px';
