@@ -63,5 +63,13 @@ export const shouldForwardProp = (prop) =>
     'show',
     'thumbSize',
     'isActive',
-    'visited'
+    'visited',
+    'active',
+    'sortable',
+    'isActiveSort',
+    'sortDirection',
+    'alternate',
+    'gridlines',
+    'spacing',
+    'scrollbar'
   ].includes(prop);
