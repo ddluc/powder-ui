@@ -1,5 +1,5 @@
 import styled, { Theme } from 'styled-components';
-import { Block } from '../Block';
+import { baseCSS } from '../Block';
 import { BaseCSSProperties } from '../../types';
 
 export interface Props extends BaseCSSProperties {
@@ -12,7 +12,8 @@ export interface ThemedProps extends Props {
   theme: Theme;
 }
 
-const Area = styled(Block)<Props>`
+const Area = styled.div<Props>`
+  ${baseCSS}
   ${({ area }) => area && `grid-area: ${area}`};
   ${({ justify }: ThemedProps) => justify && `align-self: ${justify}`};
   ${({ align }: ThemedProps) => align && `align-self: ${align}`};

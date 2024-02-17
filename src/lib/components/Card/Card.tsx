@@ -1,18 +1,15 @@
-import styled, { Theme } from 'styled-components';
-import { ElevationLevel } from '../../types';
-import { Block } from '../Block';
+import styled from 'styled-components';
+import { BaseCSSProperties, ElevationLevel } from '../../types';
+import { baseCSS } from '../Block';
 
-export type Props = {
+export interface Props extends BaseCSSProperties {
   elevation?: ElevationLevel;
   border?: string;
   children?: React.ReactNode;
-};
-
-export interface ThemedProps extends Props {
-  theme: Theme;
 }
 
-const Card = styled(Block)<Props>`
+const Card = styled.div<Props>`
+  ${baseCSS}
   min-height: 20px;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   box-shadow: ${({ elevation }) => {
@@ -76,16 +73,14 @@ const Card = styled(Block)<Props>`
     return '';
   }};
 
-  ${({ theme, elevation, border }: ThemedProps) => {
+  ${({ theme, elevation, border }) => {
     if (border) return `border: ${border}`;
     if (elevation) return `border: solid ${theme.border.width} ${theme.palette.lightgrey}`;
     return `border: solid ${theme.border.width} ${theme.palette.neutral[2]}`;
   }};
 
   border-radius: ${({ theme }) => theme.border.radius.sm};
-  padding: ${({ padding }) =>
-    padding ? `${padding[0]} ${padding[1]} ${padding[2]} ${padding[3]}` : '10px'};
-
+  padding: ${({ p }) => (p ? p : '10px')};
   background-color: ${({ theme }) => theme.palette.background};
 `;
 

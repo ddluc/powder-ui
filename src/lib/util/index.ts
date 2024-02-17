@@ -2,6 +2,7 @@
 
 import { AnonymousFunction } from '../types';
 import { Theme } from '../../theme/types';
+export { shouldForwardProp } from './shouldForwardProp';
 
 export const logBuild = (): void => {
   // eslint-disable-next-line no-console

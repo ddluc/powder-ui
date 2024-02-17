@@ -1,5 +1,5 @@
 import styled, { Theme } from 'styled-components';
-import { Block } from '../Block';
+import { baseCSS } from '../Block';
 import { BaseCSSProperties } from '../../types';
 
 export interface Props extends BaseCSSProperties {
@@ -13,7 +13,8 @@ export interface ThemedProps extends Props {
 }
 
 // Defined a styled component implmementation
-const Fit = styled(Block)<Props>`
+const Fit = styled.div<Props>`
+  ${baseCSS}
   > * {
     object-fit: ${({ fit }: ThemedProps) => fit};
     height: 100%;

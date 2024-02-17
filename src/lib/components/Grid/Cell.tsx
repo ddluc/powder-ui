@@ -1,5 +1,5 @@
 import styled, { Theme } from 'styled-components';
-import { Block } from '../Block';
+import { baseCSS } from '../Block';
 import { BaseCSSProperties } from '../../types';
 
 // Example component Props
@@ -20,7 +20,8 @@ export interface ThemedProps extends Props {
   theme: Theme;
 }
 
-const Cell = styled(Block)<Props>`
+const Cell = styled.div<Props>`
+  ${baseCSS}
   ${({ column }: ThemedProps) => column && `grid-column-start: ${column.start}`};
   ${({ column }: ThemedProps) => column && `grid-column-end: ${column.end}`};
   ${({ row }: ThemedProps) => row && `grid-row-start: ${row.start}`};

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 import styled, { Theme } from 'styled-components';
-import { Block } from '../Block';
+import { baseCSS } from '../Block';
 import { BaseCSSProperties } from '../../types';
 
 // Example component Props
@@ -59,7 +59,8 @@ export interface ThemedProps extends Props {
 }
 
 // Defined a styled component implmementation
-const Flex = styled(Block)<Props>`
+const Flex = styled.div<Props>`
+  ${baseCSS}
   display: ${({ display = 'flex' }: ThemedProps) => display};
   flex-direction: ${({ column, reverse }: ThemedProps) => {
     let direction = 'row';

@@ -8,7 +8,15 @@ export type { Theme as PowderTheme } from './theme/types';
  * Export Utilities
  */
 
-export { px, pcnt, debounce, transparentize, isDesktop, isMobile } from './lib/util';
+export {
+  px,
+  pcnt,
+  debounce,
+  transparentize,
+  isDesktop,
+  isMobile,
+  shouldForwardProp
+} from './lib/util';
 
 /**
  * Export Hooks

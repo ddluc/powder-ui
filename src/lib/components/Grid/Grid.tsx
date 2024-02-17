@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 import styled, { Theme } from 'styled-components';
-import { Block } from '../Block';
+import { baseCSS } from '../Block';
 import { BaseCSSProperties } from '../../types';
 
 // Example component Props
@@ -55,7 +55,8 @@ export interface ThemedProps extends Props {
 
 export const formatAreas = (areas: string[]): string => areas.map((area) => `"${area}"`).join(' ');
 
-export const Grid = styled(Block)<Props>`
+export const Grid = styled.div<Props>`
+  ${baseCSS}
   display: grid;
   ${({ columns }: ThemedProps) => columns && `grid-template-columns: ${columns}`};
   ${({ rows }: ThemedProps) => rows && `grid-template-rows: ${rows}`};
