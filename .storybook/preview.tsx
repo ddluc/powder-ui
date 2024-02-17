@@ -4,11 +4,12 @@ import type { Preview } from '@storybook/react';
 import React from 'react';
 
 import { useGlobals } from '@storybook/preview-api';
-import styled, { css, ThemeProvider } from 'styled-components';
+import styled, { css, ThemeProvider, StyleSheetManager } from 'styled-components';
 import { DEFAULT_THEME } from '../src/theme/default';
 import { ALT_THEME } from '../src/theme/alt';
 import GlobalFonts from '../src/theme/fonts';
 import ResetCSS from '../src/theme/reset';
+import { shouldForwardProp } from '../src/lib/util';
 
 const preview: Preview = {
   parameters: {
@@ -60,12 +61,14 @@ export const decorators = [
     const [globals] = useGlobals(); // Get the current global theme
     const theme = globals.theme === 'alt' ? ALT_THEME : DEFAULT_THEME;
     return (
-      <ThemeProvider theme={theme}>
-        <ResetCSS />
-        <GlobalFonts />
-        <ThemeBlock background={theme.palette.background} />
-        <Story {...context} />
-      </ThemeProvider>
+      <StyleSheetManager shouldForwardProp={(prop) => shouldForwardProp(prop)}>
+        <ThemeProvider theme={theme}>
+          <ResetCSS />
+          <GlobalFonts />
+          <ThemeBlock background={theme.palette.background} />
+          <Story {...context} />
+        </ThemeProvider>
+      </StyleSheetManager>
     );
   }
 ];

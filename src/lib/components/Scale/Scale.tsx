@@ -1,7 +1,8 @@
 import styled, { Theme } from 'styled-components';
-import { Block } from '../Block';
+import { baseCSS } from '../Block';
+import { BaseCSSProperties } from '../../types';
 
-export interface Props {
+export interface Props extends BaseCSSProperties {
   lg: string;
   md: string;
   sm: string;
@@ -11,7 +12,8 @@ export interface Props {
 export interface ThemedProps extends Props {
   theme: Theme;
 }
-const Scale = styled(Block)<Props>`
+const Scale = styled.div<Props>`
+  ${baseCSS}
   width: ${({ lg }: ThemedProps) => lg};
   @media screen and (max-width: ${({ theme }: ThemedProps) => theme.breakpoints.md}) {
     width: ${({ md }: ThemedProps) => md};
