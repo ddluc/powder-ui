@@ -1,7 +1,7 @@
 import React from 'react';
 import { OverlayContainer as Container } from './bin';
 import { OverlayState } from '../../types';
-
+import FocusTrap from './FocusTrap';
 import { OVERLAY_ANIMATION_DURATION } from './bin/animations';
 
 export interface Props {
@@ -87,7 +87,7 @@ const Overlay = (props: Props): JSX.Element => {
 
   return (
     <Container className="overlay" state={state} onClick={onOverlayClick}>
-      {children && children({ state, setState })}
+      <FocusTrap>{children && children({ state, setState })}</FocusTrap>
     </Container>
   );
 };
