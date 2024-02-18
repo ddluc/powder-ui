@@ -34,7 +34,7 @@ export type ThemePalette = {
   success: ThemeColor;
   warning: ThemeColor;
   danger: ThemeColor;
-  body: Color;
+  base: Color;
   background: Color;
   foreground: Color;
   grey: Color;

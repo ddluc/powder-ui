@@ -26,5 +26,13 @@ export const asDefault = Template.bind({});
 
 export const withElevation = Template.bind({});
 withElevation.args = {
-  elevation: 4
+  elevation: 2
+};
+
+export const withGloss = Template.bind({});
+withGloss.args = {
+  gloss: {
+    color: '#e7ebed',
+    blur: 10
+  }
 };

@@ -55,7 +55,7 @@ export const DEFAULT_THEME: Theme = {
       contrastText: '#FFFFFF',
       shades: ['#ffc3c3', '#ce0707', '#8c1010']
     },
-    body: '#222425',
+    base: '#000000',
     background: '#222425',
     foreground: '#FFFFFF',
     grey: '#C4C4C4',

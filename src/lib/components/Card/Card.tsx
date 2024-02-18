@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { BaseCSSProperties, ElevationLevel } from '../../types';
 import { baseCSS } from '../Block';
+import { px, transparentize } from '../../util';
 
 export interface Props extends BaseCSSProperties {
   elevation?: ElevationLevel;
   border?: string;
   children?: React.ReactNode;
+  gloss?: {
+    color: string;
+    blur: number;
+  };
 }
 
 const Card = styled.div<Props>`
@@ -73,15 +78,23 @@ const Card = styled.div<Props>`
     return '';
   }};
 
+  ${({ gloss }) => {
+    if (gloss) {
+      return `
+        background: linear-gradient(145deg, ${transparentize(gloss.color, 0.2)}, ${transparentize(gloss.color, 0.4)});
+        backdrop-filter: blur(${px(gloss.blur)});
+      `;
+    }
+  }}
+
   ${({ theme, elevation, border }) => {
     if (border) return `border: ${border}`;
-    if (elevation) return `border: solid ${theme.border.width} ${theme.palette.lightgrey}`;
-    return `border: solid ${theme.border.width} ${theme.palette.neutral[2]}`;
+    if (elevation) return `border: solid ${theme.border.width} ${theme.palette.neutral[5]}`;
+    return `border: solid ${theme.border.width} ${theme.palette.neutral[4]}`;
   }};
 
   border-radius: ${({ theme }) => theme.border.radius.sm};
   padding: ${({ p }) => (p ? p : '10px')};
-  background-color: ${({ theme }) => theme.palette.background};
 `;
 
 export default Card;

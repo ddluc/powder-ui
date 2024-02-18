@@ -54,6 +54,7 @@ export type BaseCSSProperties = {
   overflow?: OverflowCSSProperty;
   textAlign?: TextAlignCSSProperty;
   boxSizing?: BoxSizingCSSProperty;
+  blur?: number;
   // Flex Items
   flex?: string;
   grow?: number | 'auto' | 'initial' | 'inherit';

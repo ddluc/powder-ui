@@ -60,7 +60,7 @@ export const ALT_THEME: Theme = {
       contrastText: '#FFFFFF',
       shades: ['#8c1010', '#ce0707', '#ffc3c3']
     },
-    body: '#FFFFFF',
+    base: '#FFFFFF',
     background: '#FFFFFF',
     foreground: '#000000',
     grey: '#C4C4C4',

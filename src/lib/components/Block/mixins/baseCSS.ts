@@ -1,5 +1,6 @@
 import { BaseCSSProperties } from '../../../types';
 import { css } from 'styled-components';
+import { px } from '../../../util';
 
 export default css<BaseCSSProperties>`
   display: ${({ display = 'block' }) => display};
@@ -39,4 +40,5 @@ export default css<BaseCSSProperties>`
   ${({ basis }) => basis !== undefined && `flex-basis: ${basis}`};
   ${({ order }) => order !== undefined && `order: ${order}`};
   ${({ alignSelf }) => alignSelf && `align-self: ${alignSelf}`};
+  ${({ blur }) => blur && `backdrop-filter: blur(${px(blur)})`};
 `;
