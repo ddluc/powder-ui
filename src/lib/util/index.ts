@@ -71,7 +71,7 @@ export const getOutline = (error: boolean, theme: Theme): string => {
   if (error) {
     return `${transparentize(theme.palette.danger.main, 0.3)} ${theme.forms.outline}`;
   }
-  return `${theme.palette.primary.shades[3]} ${theme.forms.outline}`;
+  return `${transparentize(theme.palette.primary.main, 0.3)} ${theme.forms.outline}`;
 };
 
 /**

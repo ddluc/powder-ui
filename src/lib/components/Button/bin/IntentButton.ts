@@ -3,6 +3,7 @@
 
 import styled from 'styled-components';
 import { DefaultButton } from './DefaultButton';
+import { transparentize } from '../../../util';
 
 export interface Props {
   intent: 'success' | 'danger' | 'warning';
@@ -43,7 +44,8 @@ export const IntentButton = styled(DefaultButton)<Props>`
 
   &:focus {
     border-color: ${({ theme, intent }) => theme.palette[intent].main};
-    box-shadow: ${({ theme, intent }) => theme.palette[intent].shades[2]} 0px 0px 0px 2px;
+    box-shadow: ${({ theme, intent }) =>
+      `${transparentize(theme.palette[intent].shades[2], 0.4)} 0px 0px 0px 2px`};
   }
 
   &:hover {
@@ -51,7 +53,7 @@ export const IntentButton = styled(DefaultButton)<Props>`
     border-color: ${({ theme, intent }) => theme.palette[intent].main};
     box-shadow: ${({ theme, intent, variation }) => {
       if (variation === 'minimal') return 'none';
-      return `${theme.palette[intent].shades[2]} 0px 0px 0px 2px`;
+      return `${transparentize(theme.palette[intent].main, 0.4)} 0px 0px 0px 2px`;
     }};
     transform: translate(0px, -2px);
     cursor: pointer;

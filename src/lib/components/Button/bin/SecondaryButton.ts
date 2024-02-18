@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { DefaultButton } from './DefaultButton';
+import { transparentize } from '../../../util';
 
 // Example component Props
 export interface Props {
@@ -16,12 +17,14 @@ export const SecondaryButton = styled(DefaultButton)<Props>`
 
   &:focus {
     border-color: ${({ theme }) => theme.palette.neutral[2]};
-    box-shadow: ${({ theme }) => theme.palette.neutral[3]} 0px 0px 0px 2px;
+    box-shadow: ${({ theme }) =>
+      `${transparentize(theme.palette.neutral[1], 0.4)} 0px 0px 0px 2px`};
   }
 
   &:hover {
     border-color: ${({ theme }) => theme.palette.neutral[1]};
-    box-shadow: ${({ theme }) => theme.palette.neutral[3]} 0px 0px 0px 2px;
+    box-shadow: ${({ theme }) =>
+      `${transparentize(theme.palette.neutral[1], 0.4)} 0px 0px 0px 2px`};
     transform: translate(0px, -2px);
     cursor: pointer;
   }

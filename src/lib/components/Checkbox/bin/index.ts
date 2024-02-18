@@ -46,7 +46,8 @@ export const Input = styled.input<Props>`
     height: 14px;
     left: 12px;
     width: 14px;
-    fill: ${({ theme, error }) => (error ? theme.palette.danger.main : theme.palette.background)};
+    fill: ${({ theme, error }) =>
+      error ? theme.palette.danger.main : theme.palette.primary.contrastText};
     display: block;
     animation: ${pulse} 250ms ease both;
   }
