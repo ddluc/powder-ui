@@ -71,5 +71,6 @@ export const shouldForwardProp = (prop) =>
     'alternate',
     'gridlines',
     'spacing',
-    'scrollbar'
+    'scrollbar',
+    'isOn'
   ].includes(prop);

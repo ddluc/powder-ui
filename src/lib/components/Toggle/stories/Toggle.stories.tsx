@@ -11,7 +11,8 @@ export default {
     label: 'Dark Mode',
     name: 'dark-mode',
     on: false,
-    size: 'md'
+    size: 'md',
+    alignment: 'column'
   } as ToggleProps
 } as ComponentMeta<typeof Toggle>;
 
@@ -57,5 +58,12 @@ withErrorMessage.args = {
 
 export const withHorizontalAligntment = Template.bind({});
 withHorizontalAligntment.args = {
+  alignment: 'row'
+};
+
+export const asMinimal = Template.bind({});
+asMinimal.args = {
+  size: 'sm',
+  hideLabel: true,
   alignment: 'row'
 };

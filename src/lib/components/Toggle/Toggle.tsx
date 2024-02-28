@@ -15,10 +15,10 @@ export interface BaseProps {
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   error?: string;
-  touched: boolean;
+  touched?: boolean;
   help?: string;
   hideLabel?: boolean;
-  alignment?: 'row' | 'column';
+  alignment?: 'row' | 'column' | 'center';
   annotations?: {
     on: string | React.ReactNode;
     off: string | React.ReactNode;
@@ -51,9 +51,9 @@ const Toggle = (props: Props): JSX.Element => {
     hideLabel,
     alignment = 'row',
     annotations = { on: '', off: '' },
-    onChange,
-    onFocus,
-    onBlur
+    onChange = () => {},
+    onFocus = () => {},
+    onBlur = () => {}
   } = props;
 
   const [isFocused, setIsFocused] = React.useState(false); // Track focus state
@@ -73,7 +73,7 @@ const Toggle = (props: Props): JSX.Element => {
   };
 
   const renderAnnotation = (type: 'on' | 'off') => {
-    if (alignment === 'column' && annotations[type]) {
+    if (alignment !== 'row' && annotations[type]) {
       return <span style={{ fontSize: '10px' }}>{annotations[type]}</span>;
     }
     return '';

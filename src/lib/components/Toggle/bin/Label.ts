@@ -5,7 +5,7 @@ interface Props {
   disabled?: boolean;
   error?: boolean;
   size?: 'sm' | 'md' | 'lg';
-  alignment?: 'row' | 'column';
+  alignment?: 'row' | 'column' | 'center';
 }
 
 const fontSize = {
@@ -16,9 +16,21 @@ const fontSize = {
 
 export const Label = styled.label<Props>`
   display: flex;
-  flex-direction: ${({ alignment }) => alignment};
-  align-items: ${({ alignment }) => (alignment === 'row' ? 'center' : 'flex-start')};
-  justify-items: ${({ alignment }) => (alignment === 'row' ? 'flex-start' : 'center')};
+  flex-direction: ${({ alignment }) => {
+    if (alignment === 'column') return 'column';
+    if (alignment === 'row') return 'row';
+    if (alignment === 'center') return 'column';
+  }};
+  align-items: ${({ alignment }) => {
+    if (alignment === 'center') return 'center';
+    if (alignment === 'row') return 'center';
+    if (alignment === 'column') return 'flex-start';
+  }};
+  justify-content: ${({ alignment }) => {
+    if (alignment === 'center') return 'center';
+    if (alignment === 'row') return 'flex-start';
+    if (alignment === 'column') return 'center';
+  }};
   gap: ${({ theme }) => theme.spacing[3]};
   font-size: ${({ size }) => px(fontSize[size])};
   color: ${({ theme, error, disabled }) => {
