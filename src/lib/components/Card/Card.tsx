@@ -95,6 +95,7 @@ const Card = styled.div<Props>`
 
   border-radius: ${({ theme }) => theme.border.radius.sm};
   padding: ${({ p }) => (p ? p : '10px')};
+  box-sizing: border-box;
 `;
 
 export default Card;
