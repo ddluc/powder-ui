@@ -11,6 +11,7 @@ export default {
     sm: '320px',
     md: '800px',
     lg: '1000px',
+    xl: '1200px',
     height: '400px',
     border: 'dashed 1px #4a4a4a',
     margin: ['0', 'auto', '0', 'auto'],

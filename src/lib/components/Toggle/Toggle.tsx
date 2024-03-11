@@ -19,6 +19,7 @@ export interface BaseProps {
   help?: string;
   hideLabel?: boolean;
   alignment?: 'row' | 'column' | 'center';
+  condensed?: boolean;
   annotations?: {
     on: string | React.ReactNode;
     off: string | React.ReactNode;
@@ -48,6 +49,7 @@ const Toggle = (props: Props): JSX.Element => {
     error,
     touched,
     help,
+    condensed,
     hideLabel,
     alignment = 'row',
     annotations = { on: '', off: '' },
@@ -113,7 +115,7 @@ const Toggle = (props: Props): JSX.Element => {
           {renderAnnotation('on')}
         </Flex>
       </Label>
-      <FormMessage error={error} touched={touched} help={help} />
+      {!condensed && <FormMessage error={error} touched={touched} help={help} />}
     </Block>
   );
 };

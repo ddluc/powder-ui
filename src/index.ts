@@ -60,7 +60,7 @@ export { Toggle, ToggleProps } from './lib/components/Toggle';
 export { Typography, TextProps } from './lib/components/Typography';
 
 /** Export Types */
-export { CSSTransitionAnimation } from './lib/types';
+export * from './lib/types';
 export { TableDataRow, TableDataColumn } from './lib/components/Table';
 
 /** Reset CSS */

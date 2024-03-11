@@ -15,38 +15,38 @@ export const getAlertPalette = (theme: Theme): AlertPalette => {
   if (theme.mode === 'dark') {
     return {
       primary: {
-        background: theme.palette.neutral[0],
-        text: theme.palette.background,
+        background: theme.palette.neutral[5],
+        text: theme.palette.foreground,
         border: theme.palette.primary.main,
         icon: theme.palette.primary.main
       },
       accent: {
-        background: theme.palette.foreground,
-        text: theme.palette.background,
+        background: theme.palette.neutral[5],
+        text: theme.palette.foreground,
         border: theme.palette.accent.main,
         icon: theme.palette.accent.main
       },
       success: {
-        background: theme.palette.foreground,
-        text: theme.palette.background,
+        background: theme.palette.neutral[5],
+        text: theme.palette.foreground,
         border: theme.palette.success.main,
         icon: theme.palette.success.main
       },
       warning: {
-        background: theme.palette.foreground,
-        text: theme.palette.background,
+        background: theme.palette.neutral[5],
+        text: theme.palette.foreground,
         border: theme.palette.warning.main,
         icon: theme.palette.warning.main
       },
       danger: {
-        background: theme.palette.foreground,
-        text: theme.palette.background,
+        background: theme.palette.neutral[5],
+        text: theme.palette.foreground,
         border: theme.palette.danger.main,
         icon: theme.palette.danger.main
       },
       neutral: {
-        background: theme.palette.neutral[0],
-        text: theme.palette.neutral[3],
+        background: theme.palette.neutral[5],
+        text: theme.palette.foreground,
         border: theme.palette.neutral[2],
         icon: theme.palette.neutral[3]
       }
