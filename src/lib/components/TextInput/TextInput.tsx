@@ -37,9 +37,9 @@ const TextInput = forwardRef<HTMLInputElement, Props>((props: Props, ref): JSX.E
     const { animated, hideLabel, condensed } = props;
     return (
       <Flex column gap="8px 0px">
-        {!(animated || hideLabel) && <Skeleton {...props} type="box" height={14} width={140} />}
+        {!(animated || hideLabel) && <Skeleton {...props} type="box" height={18} width={140} />}
         <Skeleton {...props} type="box" height={40} fluid />
-        {!condensed && <Spacer spacing={4} />}
+        {!condensed && <Spacer spacing={5} />}
       </Flex>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Skeleton, BaseSkeletonProps } from '../../Skeleton';
 import { Flex } from '../../Flex';
+import { Block } from '../../Block';
 
 export interface TableSkeletonProps extends BaseSkeletonProps {
   rowCount?: number;
@@ -11,8 +12,10 @@ export interface TableSkeletonProps extends BaseSkeletonProps {
 export const TableSkeleton = ({ rowCount = 5, colCount = 5, spacing }: TableSkeletonProps) => (
   <Flex column gap="20px">
     <Flex row gap="20px" justifyContent="space-between">
-      {Array.from({ length: colCount }).map((i: string) => (
-        <Skeleton key={i} type="box" height={spacing * 8} width={250} />
+      {Array.from({ length: colCount }).map((x, i) => (
+        <Block key={i} basis="250px" grow={1} shrink={1}>
+          <Skeleton type="box" height={spacing * 8} fluid />
+        </Block>
       ))}
     </Flex>
     <Skeleton type="box" height={80 * rowCount} fluid />

@@ -15,7 +15,7 @@ export const Label = styled.label<Props>`
     if (disabled) {
       return theme.palette.neutral[2];
     }
-    return theme.palette.neutral[1];
+    return theme.palette.foreground;
   }};
   font-size: ${({ theme }) => px(theme.fonts.size.small)};
   cursor: pointer;

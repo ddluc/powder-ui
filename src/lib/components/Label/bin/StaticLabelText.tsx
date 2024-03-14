@@ -10,14 +10,15 @@ interface Props {
 }
 
 const StaticLabelText = styled.span<Props>`
-  font-size: ${({ theme }) => px(theme.fonts.size.small - 2)};
-  display: ${({ hideLabel }) => (hideLabel ? 'none' : 'auto')};
+  font-size: ${({ theme }) => px(theme.fonts.size.small)};
+  display: ${({ hideLabel }) => (hideLabel ? 'none' : 'block')};
   color: ${({ theme, error, disabled, isFocused }) => {
     if (error) return theme.palette.danger.main;
     if (disabled) return theme.palette.neutral[2];
     if (isFocused) return theme.palette.primary.main;
     return theme.palette.neutral[0];
   }};
+  margin-bottom: ${({ theme }) => theme.spacing[2]};
 `;
 
 export default StaticLabelText;

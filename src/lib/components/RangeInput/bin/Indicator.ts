@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 import styled, { Theme } from 'styled-components';
+import { px } from '../../../util';
 
 type Props = {
+  size: number;
   position: string;
   error?: boolean;
   disabled: boolean;
@@ -20,7 +22,7 @@ export const Indicator = styled.div<Props>`
   justify-content: center;
   position: relative;
   height: 18px;
-  width: 36px;
+  width: ${({ size }) => px(size)};
   padding: 2px 4px;
   font-size: 12px;
   background-color: ${({ theme, error, disabled }) => getIndicatorColor(theme, error, disabled)};

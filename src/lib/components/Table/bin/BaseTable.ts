@@ -5,6 +5,7 @@ import { px } from '../../../util';
 export type Props = {
   spacing?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   gridlines?: boolean;
+  scroll?: boolean;
   scrollbar?: {
     height?: number;
     color?: string;
@@ -30,8 +31,8 @@ export const BaseTable = styled.table<Props>`
     gridlines && gridColor ? gridColor : theme.palette.background};
   // Responsive Scrolling
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    display: block;
-    overflow-x: auto;
+    display: ${({ scroll }) => (scroll ? 'block' : 'table')};
+    overflow-x: ${({ scroll }) => (scroll ? 'scroll' : 'hidden')};
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     // Custom scrollbar styles

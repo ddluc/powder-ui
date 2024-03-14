@@ -55,6 +55,7 @@ const Table = (props: Props): JSX.Element => {
     activeColor,
     even,
     odd,
+    scroll = true,
     scrollbar = { height: 5 }
   } = props;
 
@@ -109,6 +110,7 @@ const Table = (props: Props): JSX.Element => {
   return (
     <BaseTable
       spacing={spacing}
+      scroll={scroll}
       scrollbar={scrollbar}
       alternate={alternate}
       gridlines={gridlines}

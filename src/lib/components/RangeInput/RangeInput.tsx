@@ -6,6 +6,8 @@ import { FormMessage } from '../Form';
 import { Flex } from '../Flex';
 import { Indicator } from './bin/Indicator';
 import { Skeleton, isSkeleton, BaseSkeletonProps } from '../Skeleton';
+import { Spacer } from '../Spacer';
+import { Block } from '../Block';
 
 export interface BaseProps {
   name: string;
@@ -15,6 +17,7 @@ export interface BaseProps {
   max?: number;
   step?: number;
   thumbSize?: number;
+  indicatorSize?: number;
   value?: number;
   units?: string;
   touched?: boolean;
@@ -22,11 +25,13 @@ export interface BaseProps {
   help?: string;
   disabled?: boolean;
   hideLabel?: boolean;
+  condensed?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface SkeletonProps extends BaseSkeletonProps {
   hideLabel?: boolean;
+  condensed?: boolean;
 }
 
 export type Props = BaseProps | SkeletonProps;
@@ -34,11 +39,15 @@ export type Props = BaseProps | SkeletonProps;
 // Declare the component
 const RangeInput = (props: Props): JSX.Element => {
   if (isSkeleton(props)) {
-    const { hideLabel } = props;
+    const { hideLabel, condensed } = props;
     return (
       <Flex column gap="5px">
-        {!hideLabel && <Skeleton skeleton type="box" width={120} height={20} />}
+        {!hideLabel && <Skeleton skeleton type="box" width={120} height={18} />}
+        <Flex height="18px" justifyContent="center" m="4px 0px">
+          <Skeleton skeleton type="box" height={18} width={36} />
+        </Flex>
         <Skeleton skeleton type="box" fluid height={20} />
+        {!condensed && <Spacer spacing={5} />}
       </Flex>
     );
   }
@@ -51,6 +60,7 @@ const RangeInput = (props: Props): JSX.Element => {
     max = 0,
     step = 1,
     thumbSize = 18,
+    indicatorSize = 36,
     value = 0,
     units,
     touched = false,
@@ -58,6 +68,7 @@ const RangeInput = (props: Props): JSX.Element => {
     help,
     disabled = false,
     hideLabel = false,
+    condensed = false,
     onChange
   } = props;
 
@@ -71,6 +82,7 @@ const RangeInput = (props: Props): JSX.Element => {
     return (
       <Flex column gap="5px">
         {!hideLabel && <Skeleton skeleton type="box" width={120} height={20} />}
+        <Block height="18px" />
         <Skeleton skeleton type="box" fluid height={20} />
         <FormMessage touched error={`Please provide a value between ${min} and ${max}`} />
       </Flex>
@@ -82,7 +94,12 @@ const RangeInput = (props: Props): JSX.Element => {
       <Label htmlFor="range" disabled={disabled} error={!!(touched && error)} show={!hideLabel}>
         <span>{label}</span>
         <Flex column padding={['20px', '0px', '0px', '0px']} position="relative">
-          <Indicator position={tooltipPosition} error={!!(touched && error)} disabled={disabled}>
+          <Indicator
+            size={indicatorSize}
+            position={tooltipPosition}
+            error={!!(touched && error)}
+            disabled={disabled}
+          >
             <span>
               {value} {units}
             </span>
@@ -102,7 +119,7 @@ const RangeInput = (props: Props): JSX.Element => {
           />
         </Flex>
       </Label>
-      <FormMessage error={error} touched={touched} help={help} />
+      {!condensed && <FormMessage error={error} touched={touched} help={help} />}
     </Flex>
   );
 };
