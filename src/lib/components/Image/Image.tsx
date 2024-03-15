@@ -13,11 +13,12 @@ interface BaseProps extends React.HTMLAttributes<HTMLImageElement> {
     preview?: string;
   };
   height: number;
-  width: number;
+  width?: number;
+  fluid?: boolean;
   blur?: number;
   fit?: 'fill' | 'cover' | 'contain' | 'scale';
-  xpos: number;
-  ypos: number;
+  xpos?: number;
+  ypos?: number;
   backgroundColor?: string;
 }
 
@@ -33,7 +34,18 @@ const Image = (props: Props): JSX.Element => {
     return <Skeleton {...props} type="box" />;
   }
 
-  const { height, width, src, blur, backgroundColor, fit, xpos, ypos, ...imageProps } = props;
+  const {
+    height,
+    width,
+    fluid,
+    src,
+    blur,
+    backgroundColor,
+    fit,
+    xpos = 50,
+    ypos = 50,
+    ...imageProps
+  } = props;
 
   const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
   const [isVisible, currentElement] = useOnScreen<HTMLDivElement>();
@@ -46,7 +58,7 @@ const Image = (props: Props): JSX.Element => {
     <Fit
       ref={currentElement}
       height={px(height)}
-      width={px(width)}
+      width={fluid ? '100%' : px(width)}
       position="relative"
       fit={fit}
       align={`${pcnt(xpos)} ${pcnt(ypos)}`}
