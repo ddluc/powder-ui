@@ -4,7 +4,6 @@ import { DefaultButton } from './bin/DefaultButton';
 import { IntentButton } from './bin/IntentButton';
 import { SecondaryButton } from './bin/SecondaryButton';
 import { MinimalButton } from './bin/MinimalButton';
-
 import { ButtonIcon } from './bin/Icon';
 import { ButtonText } from './bin/Text';
 
@@ -28,6 +27,7 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   height?: number;
   width?: number;
   alignment?: string;
+  fixed?: boolean;
 }
 
 interface SkeletonProps extends BaseSkeletonProps {
@@ -58,6 +58,7 @@ const Button = (props: Props): JSX.Element => {
     radius = null,
     height = null,
     width = null,
+    fixed = false,
     ...buttonProps
   } = props;
 
@@ -75,10 +76,14 @@ const Button = (props: Props): JSX.Element => {
         textColor={textColor}
         intent={intent}
         variation={variation}
-        width={width}
-        height={height}
         textSize={textSize}
+        height={height}
+        width={width}
+        border={border}
+        radius={radius}
         type={type}
+        fixed={fixed}
+        {...buttonProps}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -95,7 +100,9 @@ const Button = (props: Props): JSX.Element => {
         width={width}
         height={height}
         border={border}
+        radius={radius}
         type={type}
+        fixed={fixed}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -110,8 +117,11 @@ const Button = (props: Props): JSX.Element => {
         textColor={textColor}
         textSize={textSize}
         width={width}
+        border={border}
+        radius={radius}
         height={height}
         type={type}
+        fixed={fixed}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -129,6 +139,7 @@ const Button = (props: Props): JSX.Element => {
       height={height}
       width={width}
       type={type}
+      fixed={fixed}
       {...buttonProps}
     >
       {renderButtonContent()}

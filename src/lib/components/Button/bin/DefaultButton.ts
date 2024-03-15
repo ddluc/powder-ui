@@ -11,6 +11,7 @@ export interface Props {
   radius?: string;
   height?: number;
   width?: number;
+  fixed?: boolean;
   alignment?: string;
   gap?: number;
   condensed?: boolean;
@@ -56,12 +57,13 @@ export const DefaultButton = styled.button<Props>`
   &:focus {
     border-color: ${({ theme }) => theme.palette.primary.shades[2]};
     box-shadow: ${({ theme }) => getOutline(false, theme)};
+    ${({ fixed }) => !fixed && 'transform: translate(0px, -2px);'};
   }
 
   &:hover {
     border-color: ${({ theme }) => theme.palette.primary.shades[2]};
     box-shadow: ${({ theme }) => getOutline(false, theme)};
-    transform: translate(0px, -2px);
+    ${({ fixed }) => !fixed && 'transform: translate(0px, -2px);'};
     cursor: pointer;
   }
 

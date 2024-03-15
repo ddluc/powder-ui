@@ -55,7 +55,6 @@ export const IntentButton = styled(DefaultButton)<Props>`
       if (variation === 'minimal') return 'none';
       return `${transparentize(theme.palette[intent].main, 0.4)} 0px 0px 0px 2px`;
     }};
-    transform: translate(0px, -2px);
     cursor: pointer;
   }
 

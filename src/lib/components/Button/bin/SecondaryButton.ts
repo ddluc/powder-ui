@@ -25,7 +25,6 @@ export const SecondaryButton = styled(DefaultButton)<Props>`
     border-color: ${({ theme }) => theme.palette.neutral[1]};
     box-shadow: ${({ theme }) =>
       `${transparentize(theme.palette.neutral[1], 0.4)} 0px 0px 0px 2px`};
-    transform: translate(0px, -2px);
     cursor: pointer;
   }
 
@@ -35,7 +34,6 @@ export const SecondaryButton = styled(DefaultButton)<Props>`
     background-color: ${({ theme }) => theme.palette.neutral[3]};
     border-color: ${({ theme }) => theme.palette.neutral[3]};
     box-shadow: none;
-    transform: translate(0px, 0px);
     cursor: not-allowed;
   }
 `;
