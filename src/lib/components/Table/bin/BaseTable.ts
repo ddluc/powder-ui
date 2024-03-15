@@ -52,6 +52,7 @@ export const BaseTable = styled.table<Props>`
   // Header Spacing
   thead {
     th {
+      vertical-align: middle;
       padding: ${({ spacing, theme }) => theme.spacing[spacing]};
       background-color: ${({ headerColor, theme }) => headerColor || theme.palette.background};
     }

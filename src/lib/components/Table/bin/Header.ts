@@ -4,9 +4,14 @@ import styled from 'styled-components';
 import { PaletteOption } from '../../../types';
 
 export type Props = {
-  border?: PaletteOption;
+  borderColor?: PaletteOption;
+  topBorder?: boolean;
+  bottomBorder?: boolean;
 };
 
 export const Header = styled.thead<Props>`
-  border-bottom: solid 1px ${({ theme, border }) => border || theme.palette.neutral[0]};
+  ${({ theme, borderColor, bottomBorder = true }) =>
+    bottomBorder && `border-bottom: solid 1px ${borderColor || theme.palette.neutral[0]}`};
+  ${({ theme, borderColor, topBorder = false }) =>
+    topBorder && `border-top: solid 1px ${borderColor || theme.palette.neutral[0]}`};
 `;
