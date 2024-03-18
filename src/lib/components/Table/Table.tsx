@@ -50,7 +50,6 @@ const Table = (props: Props): JSX.Element => {
     spacing = 4,
     alternate = true,
     gridlines = false,
-    headerColor,
     gridColor,
     activeColor,
     even,
@@ -114,7 +113,6 @@ const Table = (props: Props): JSX.Element => {
       scrollbar={scrollbar}
       alternate={alternate}
       gridlines={gridlines}
-      headerColor={headerColor}
       gridColor={gridColor}
       activeColor={activeColor}
       even={even}

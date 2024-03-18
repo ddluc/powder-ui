@@ -14,7 +14,6 @@ export type Props = {
   };
   alternate?: boolean;
   gridColor?: string;
-  headerColor?: string;
   activeColor?: string;
   textColor?: string;
   even?: string;
@@ -54,7 +53,6 @@ export const BaseTable = styled.table<Props>`
     th {
       vertical-align: middle;
       padding: ${({ spacing, theme }) => theme.spacing[spacing]};
-      background-color: ${({ headerColor, theme }) => headerColor || theme.palette.background};
     }
   }
   // Body Colors & Spacing

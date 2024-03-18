@@ -93,12 +93,10 @@ export const HeaderCell = ({
     >
       <Flex wrap="nowrap" gap="6px" alignItems="center" justifyContent={getAlignment()}>
         <Block>{children || header}</Block>
-        {sortable ? (
+        {sortable && (
           <SortIcon className="icon" isActiveSort={isActiveSort()} sortDirection={sortDirection}>
             {isActiveSort() ? '↑' : '↕'}
           </SortIcon>
-        ) : (
-          !action && <Block height="12px" />
         )}
       </Flex>
     </BaseHeaderCell>
