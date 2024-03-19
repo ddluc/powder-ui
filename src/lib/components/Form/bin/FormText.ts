@@ -12,7 +12,9 @@ export const FormText = styled.div<Props>`
   margin-top: ${({ theme }) => theme.spacing[1]};
   font-size: ${({ theme }) => px(theme.fonts.size.small - 2)};
   font-family: ${({ theme }) => theme.fonts.family.body};
-  overflow-y: hidden;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: ${({ error, touched, theme }) =>
     error && touched ? theme.palette.danger.main : theme.palette.neutral[1]};
   height: 20px;

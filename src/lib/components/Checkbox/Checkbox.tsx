@@ -17,6 +17,7 @@ export interface BaseProps extends React.HTMLAttributes<HTMLInputElement> {
   help?: string;
   readOnly?: boolean;
   disabled?: boolean;
+  condensed?: boolean;
   asGroup?: boolean;
   a11yLabel?: string;
 }
@@ -44,6 +45,7 @@ const Checkbox = (props: Props): JSX.Element => {
     value,
     readOnly = false,
     disabled,
+    condensed,
     error,
     help,
     touched,
@@ -53,6 +55,8 @@ const Checkbox = (props: Props): JSX.Element => {
   } = props;
 
   const getAriaLabel = () => (typeof label === 'string' ? label : a11yLabel);
+
+  const showFormMessage = () => !asGroup && !condensed;
 
   return (
     <Block position="relative">
@@ -72,7 +76,7 @@ const Checkbox = (props: Props): JSX.Element => {
         {checked && <CheckIcon height="10px" width="10px" />}
         <span>{label}</span>
       </Label>
-      {!asGroup && <FormMessage error={error} touched={touched} help={help} />}
+      {showFormMessage() && <FormMessage error={error} touched={touched} help={help} />}
     </Block>
   );
 };

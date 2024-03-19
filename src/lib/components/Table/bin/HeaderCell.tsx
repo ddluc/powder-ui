@@ -12,6 +12,7 @@ export const BaseHeaderCell = styled.th<{
   sortable: boolean;
   active: boolean;
   align?: 'left' | 'right' | 'center';
+  action?: boolean;
 }>`
   width: ${(props) => (props.width ? `${props.width}%` : 'auto')};
   font-weight: bold;
@@ -24,16 +25,18 @@ export const BaseHeaderCell = styled.th<{
   }
   color: ${({ active, theme }) =>
     active ? theme.palette.accent.shades[1] : theme.palette.foreground};
-  ${({ active }) => (active ? 'font-weight: bold' : '')};
+  ${({ active }) => active && 'font-weight: bold'};
+  ${({ action }) => action && 'padding: 0px!important;'};
 `;
 
 const SortIcon = styled.div<{ isActiveSort: boolean; sortDirection: string }>`
   display: flex;
   justify-content: center;
+  align-items: center;
   // Initially hidden unless active
   opacity: ${({ isActiveSort }) => (isActiveSort ? 1 : 0.6)};
-  width: 20px;
-  height: 20px;
+  width: 8px;
+  height: 12px;
   ${({ isActiveSort, sortDirection }) => {
     if (isActiveSort && sortDirection === 'desc') {
       return css`
@@ -50,17 +53,21 @@ const SortIcon = styled.div<{ isActiveSort: boolean; sortDirection: string }>`
 
 export type Props = {
   column: TableDataColumn;
-  sortColumn: Nullable<string>;
-  sortDirection: string;
+  sortColumn?: Nullable<string>;
+  sortDirection?: string;
   align?: 'left' | 'center' | 'right';
-  onClick: () => void;
+  action?: boolean;
+  children?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export const HeaderCell = ({
+  children,
   column,
   sortColumn,
   sortDirection,
   align,
+  action,
   onClick
 }: Props): JSX.Element => {
   const { key, sortable, header, width } = column;
@@ -82,9 +89,10 @@ export const HeaderCell = ({
       onClick={onHeaderClick}
       sortable={sortable}
       active={isActiveSort()}
+      action={action}
     >
-      <Flex wrap="nowrap" gap="2px" alignItems="center" justifyContent={getAlignment()}>
-        <Block>{header}</Block>
+      <Flex wrap="nowrap" gap="6px" alignItems="center" justifyContent={getAlignment()}>
+        <Block>{children || header}</Block>
         {sortable && (
           <SortIcon className="icon" isActiveSort={isActiveSort()} sortDirection={sortDirection}>
             {isActiveSort() ? '↑' : '↕'}

@@ -25,7 +25,6 @@ export const MinimalButton = styled(DefaultButton)<Props>`
   &:hover {
     border: none;
     box-shadow: none;
-    transform: translate(0px, -2px);
     color: ${({ theme }) => theme.palette.primary.main};
     fill: ${({ theme }) => theme.palette.primary.main};
     cursor: pointer;
@@ -37,7 +36,6 @@ export const MinimalButton = styled(DefaultButton)<Props>`
     fill: ${({ theme }) => theme.palette.neutral[2]};
     border: none;
     box-shadow: none;
-    transform: translate(0px, 0px);
     cursor: not-allowed;
   }
 `;

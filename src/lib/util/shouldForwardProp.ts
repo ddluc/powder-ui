@@ -70,7 +70,12 @@ export const shouldForwardProp = (prop) =>
     'sortDirection',
     'alternate',
     'gridlines',
+    'gridColor',
     'spacing',
     'scrollbar',
-    'isOn'
+    'isOn',
+    'yOffset',
+    'indent',
+    'scroll',
+    'fixed'
   ].includes(prop);
