@@ -75,5 +75,7 @@ export const shouldForwardProp = (prop) =>
     'scrollbar',
     'isOn',
     'yOffset',
-    'indent'
+    'indent',
+    'scroll',
+    'fixed'
   ].includes(prop);
