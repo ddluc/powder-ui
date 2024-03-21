@@ -8,7 +8,7 @@ import { Skeleton, isSkeleton, BaseSkeletonProps } from '../Skeleton';
 import { Input } from './bin';
 import { Spacer } from '../Spacer';
 
-interface BaseProps {
+interface BaseProps extends React.HTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
   value: string;
@@ -21,6 +21,7 @@ interface BaseProps {
   touched?: boolean;
   disabled?: boolean;
   condensed?: boolean;
+  step?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
@@ -59,7 +60,8 @@ const TextInput = forwardRef<HTMLInputElement, Props>((props: Props, ref): JSX.E
     onFocus = () => {},
     touched = false,
     disabled = false,
-    condensed = false
+    condensed = false,
+    ...baseProps
   } = props;
 
   const [isFocused, setIsFocused] = React.useState(false);
@@ -110,6 +112,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>((props: Props, ref): JSX.E
           onFocus={onFocusHandler}
           onBlur={onBlurHandler}
           ref={ref}
+          {...baseProps}
         />
       </Label>
       {!condensed && <FormMessage error={error} touched={touched} help={help} />}
