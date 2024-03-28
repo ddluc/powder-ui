@@ -32,7 +32,7 @@ export type BoxSizingCSSProperty = 'border-box' | 'content-box' | 'inherit' | 'i
 
 export type BaseCSSProperties = {
   id?: string;
-  display?: 'block' | 'inline-block' | 'flex' | 'grid';
+  display?: 'block' | 'inline-block' | 'flex' | 'grid' | 'none';
   height?: string;
   width?: string;
   float?: CSSFLoatProperty;
