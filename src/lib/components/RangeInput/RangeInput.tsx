@@ -17,6 +17,7 @@ export interface BaseProps {
   max?: number;
   step?: number;
   thumbSize?: number;
+  indicator?: boolean;
   indicatorSize?: number;
   value?: number;
   units?: string;
@@ -60,6 +61,7 @@ const RangeInput = (props: Props): JSX.Element => {
     max = 0,
     step = 1,
     thumbSize = 18,
+    indicator = true,
     indicatorSize = 36,
     value = 0,
     units,
@@ -93,8 +95,9 @@ const RangeInput = (props: Props): JSX.Element => {
     <Flex column gap="5px" width="100%">
       <Label htmlFor="range" disabled={disabled} error={!!(touched && error)} show={!hideLabel}>
         <span>{label}</span>
-        <Flex column padding={['20px', '0px', '0px', '0px']} position="relative">
+        <Flex column padding={indicator && ['20px', '0px', '0px', '0px']} position="relative">
           <Indicator
+            show={indicator}
             size={indicatorSize}
             position={tooltipPosition}
             error={!!(touched && error)}
@@ -112,6 +115,7 @@ const RangeInput = (props: Props): JSX.Element => {
             max={max}
             step={step}
             thumbSize={thumbSize}
+            margin={indicator}
             value={value}
             error={!!(touched && error)}
             disabled={!!disabled}
