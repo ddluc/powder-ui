@@ -1,10 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button, ButtonProps } from '../index';
+import { TextInput } from '../../TextInput';
+import { Flex } from '../../Flex';
 
 import SettingsIcon from '../__mocks__/settings.svg';
 import TrashIcon from '../__mocks__/trash.svg';
 import RestartIcon from '../__mocks__/restart.svg';
+import CheckmarkIcon from '../__mocks__/checkmark.svg';
+import { Block } from '../../Block';
 
 export default {
   title: 'Core/Button',
@@ -13,6 +17,7 @@ export default {
     text: 'Learn More',
     variation: 'default',
     intent: 'none',
+    size: 'sm',
     fluid: false,
     iconSize: 'sm'
   } as ButtonProps
@@ -27,10 +32,8 @@ const IconTemplate: ComponentStory<typeof Button> = (
 
   const getIconSize = () => {
     const { iconSize } = baseArgs;
-    if (iconSize === 'sm') return '16px';
-    if (iconSize === 'md') return '24px';
-    if (iconSize === 'lg') return '32px';
-    return 'auto';
+    if (iconSize === 'lg') return '24px';
+    return '16px';
   };
 
   if (iconType === 'trash') {
@@ -50,6 +53,11 @@ const IconTemplate: ComponentStory<typeof Button> = (
 
 export const asDefault = Template.bind({});
 
+export const asLarge = Template.bind({});
+asLarge.args = {
+  size: 'lg'
+};
+
 export const asSecondary = Template.bind({});
 asSecondary.args = {
   variation: 'secondary'
@@ -66,6 +74,14 @@ export const asIcon = IconTemplate.bind({});
 asIcon.args = {
   text: '',
   variation: 'secondary'
+};
+
+export const asIconLarge = IconTemplate.bind({});
+asIconLarge.args = {
+  text: '',
+  variation: 'secondary',
+  size: 'lg',
+  iconSize: 'lg'
 };
 
 export const asDanger = IconTemplate.bind({});
@@ -105,6 +121,52 @@ export const withOverflowText = Template.bind({});
 withOverflowText.args = {
   text: 'This is a button with some really long instructions which breaks the layout'
 };
+
+export const alignedWithTextInput: ComponentStory<typeof Button> = () => {
+  const [value, setValue] = React.useState('');
+  return (
+    <Flex gap="0px 8px" alignContent="flex-start" wrap="nowrap">
+      <TextInput
+        name="search"
+        label="Search"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        condensed
+      />
+      <Block alignSelf="flex-end">
+        <Button
+          text="Search"
+          size="lg"
+          variation="default"
+          icon={<CheckmarkIcon height="16px" width="16px" />}
+          iconPosition="left"
+        />
+      </Block>
+    </Flex>
+  );
+};
+alignedWithTextInput.storyName = 'Aligned with TextInput';
+
+export const asButtonGroup: ComponentStory<typeof Button> = () => (
+  <Flex gap="0px 8px" alignItems="center" wrap="nowrap">
+    <Button
+      variation="default"
+      text="Submit"
+      icon={<CheckmarkIcon height="16px" width="16px" />}
+      iconPosition="left"
+    />
+    <Button
+      variation="secondary"
+      text="Settings"
+      icon={<SettingsIcon height="16px" width="16px" />}
+      iconPosition="left"
+    />
+    <Button intent="success" text="Approve" />
+    <Button intent="warning" text="Review" />
+    <Button variation="secondary" icon={<RestartIcon height="16px" width="16px" />} />
+  </Flex>
+);
+asButtonGroup.storyName = 'As Button Group';
 
 export const asSkeleton = Template.bind({});
 asSkeleton.args = {

@@ -10,6 +10,7 @@ export interface Props {
   border?: string;
   radius?: string;
   height?: number;
+  size?: 'sm' | 'lg';
   width?: number;
   fixed?: boolean;
   alignment?: string;
@@ -22,7 +23,6 @@ export interface Props {
 export const DefaultButton = styled.button<Props>`
   display: flex;
   justify-content: ${({ alignment }) => alignment || 'flex-start'};
-  text-align: ${({ alignment }) => (alignment === 'center' ? 'center' : 'left')};
   align-items: center;
   gap: 0px ${({ theme }) => theme.spacing[2]};
   flex-direction: ${({ iconPosition }) => (iconPosition === 'right' ? 'row-reverse' : 'row')};
@@ -42,9 +42,10 @@ export const DefaultButton = styled.button<Props>`
     return 'max-width: 220px';
   }};
 
-  ${({ height }) => {
+  ${({ height, size = 'sm' }) => {
     if (height) return `height: ${height}px`;
-    return '';
+    if (size === 'lg') return 'height: 42px';
+    return 'height: 34px';
   }};
 
   outline: none;

@@ -15,7 +15,7 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   text?: string;
   icon?: React.ReactNode;
   iconPosition?: 'right' | 'left';
-  iconSize?: 'sm' | 'md' | 'lg';
+  iconSize?: 'sm' | 'lg';
   disabled?: boolean;
   fluid?: boolean;
   color?: string;
@@ -25,8 +25,8 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   border?: string;
   radius?: string;
   height?: number;
+  size?: 'sm' | 'lg';
   width?: number;
-  alignment?: string;
   fixed?: boolean;
 }
 
@@ -57,17 +57,28 @@ const Button = (props: Props): JSX.Element => {
     border = null,
     radius = null,
     height = null,
+    size = 'sm',
     width = null,
     fixed = false,
     ...buttonProps
   } = props;
 
-  const renderButtonContent = (): JSX.Element => (
-    <>
-      {icon && <ButtonIcon size={iconSize}>{icon}</ButtonIcon>}
-      {text && <ButtonText align={align}>{text}</ButtonText>}
-    </>
-  );
+  const alignment = (!text && icon) || align === 'center' ? 'center' : undefined;
+
+  const iconPixelSize = iconSize === 'lg' ? '24px' : '16px';
+
+  const renderButtonContent = (): JSX.Element => {
+    const sizedIcon = React.isValidElement(icon)
+      ? React.cloneElement(icon, { size: iconPixelSize } as any)
+      : icon;
+
+    return (
+      <>
+        {sizedIcon && <ButtonIcon size={iconSize}>{sizedIcon}</ButtonIcon>}
+        {text && <ButtonText>{text}</ButtonText>}
+      </>
+    );
+  };
 
   if (intent && intent !== 'none') {
     return (
@@ -78,12 +89,13 @@ const Button = (props: Props): JSX.Element => {
         variation={variation}
         textSize={textSize}
         height={height}
+        size={size}
         width={width}
         border={border}
         radius={radius}
+        alignment={alignment}
         type={type}
         fixed={fixed}
-        {...buttonProps}
         {...buttonProps}
       >
         {renderButtonContent()}
@@ -99,8 +111,10 @@ const Button = (props: Props): JSX.Element => {
         textSize={textSize}
         width={width}
         height={height}
+        size={size}
         border={border}
         radius={radius}
+        alignment={alignment}
         type={type}
         fixed={fixed}
         {...buttonProps}
@@ -117,9 +131,10 @@ const Button = (props: Props): JSX.Element => {
         textColor={textColor}
         textSize={textSize}
         width={width}
+        size={size}
         border={border}
         radius={radius}
-        height={height}
+        alignment={alignment}
         type={type}
         fixed={fixed}
         {...buttonProps}
@@ -137,7 +152,9 @@ const Button = (props: Props): JSX.Element => {
       border={border}
       radius={radius}
       height={height}
+      size={size}
       width={width}
+      alignment={alignment}
       type={type}
       fixed={fixed}
       {...buttonProps}

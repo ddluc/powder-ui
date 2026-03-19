@@ -77,5 +77,11 @@ export const shouldForwardProp = (prop) =>
     'yOffset',
     'indent',
     'scroll',
-    'fixed'
+    'fixed',
+    'italic',
+    'mono',
+    'bold',
+    'bottomBorder',
+    'ellipses',
+    'borderColor'
   ].includes(prop);

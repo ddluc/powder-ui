@@ -35,9 +35,10 @@ const Sidesheet = (props: Props): JSX.Element => {
               variation="minimal"
               onClick={onCloseButtonClick}
               iconSize="lg"
+              width={34}
               icon={
                 closeIcon || (
-                  <CloseIcon width="32px" height="32px" fill={theme.palette.neutral[2]} />
+                  <CloseIcon width="100%" height="100%" fill={theme.palette.neutral[2]} />
                 )
               }
             />
