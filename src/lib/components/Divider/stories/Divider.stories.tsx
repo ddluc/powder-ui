@@ -30,15 +30,11 @@ const DividerWithContent = (args: DividerProps) => {
   return (
     <Flex row={type === 'vertical'} column={type === 'horizontal'} width="100%">
       <Flex center={type === 'vertical'}>
-        <Typography.Body spacing={{ top: '0px', bottom: '0px' }}>
-          Here is some content
-        </Typography.Body>
+        <Typography.Body condensed>Here is some content</Typography.Body>
       </Flex>
       <Divider {...baseArgs} />
       <Flex center={type === 'vertical'}>
-        <Typography.Body spacing={{ top: '0px', bottom: '0px' }}>
-          Here is some other content
-        </Typography.Body>
+        <Typography.Body condensed>Here is some other content</Typography.Body>
       </Flex>
     </Flex>
   );

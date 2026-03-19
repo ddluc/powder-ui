@@ -1,4 +1,5 @@
 import styled, { Theme } from 'styled-components';
+import { px } from '../../../util';
 import { TextProperties } from '../types';
 import { AbstractTextStyles } from './AbstractText';
 
@@ -16,7 +17,7 @@ export const Link = styled.a<Props>`
   ${AbstractTextStyles}
   margin: 0px 0px;
   text-decoration: none;
-  font-size: ${({ size, theme }) => size || `${theme.fonts.size.normal}px`};
+  font-size: ${({ size, theme }) => px(size || theme.fonts.size.normal)};
   color: ${({ theme, visited, active, color }) => {
     if (color) return color;
     if (active) return theme.palette.primary.shades[2];

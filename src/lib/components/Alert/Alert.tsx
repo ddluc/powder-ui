@@ -49,10 +49,12 @@ const Alert = (props: Props): JSX.Element => {
     <AlertCard state={state} palette={palette[type]}>
       <Flex gap="8px">
         {icon && <AlertIcon>{icon}</AlertIcon>}
-        <Typography.H6 spacing={{ top: '2px', bottom: '2px' }}>{title}</Typography.H6>
+        <Typography.H6 top={1} bottom={1}>
+          {title}
+        </Typography.H6>
       </Flex>
       {content && (
-        <Typography.Body spacing={{ top: '2px', bottom: '2px' }} size="12px">
+        <Typography.Body top={1} bottom={1} size={12}>
           {content}
         </Typography.Body>
       )}

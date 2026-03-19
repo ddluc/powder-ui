@@ -1,4 +1,5 @@
 import styled, { Theme } from 'styled-components';
+import { px } from '../../../util';
 import { TextProperties } from '../types';
 import { AbstractTextStyles } from './AbstractText';
 
@@ -10,10 +11,10 @@ export interface ThemedProps extends Props {
 
 export const Text = styled.span<Props>`
   ${AbstractTextStyles}
-  font-size: ${({ size, theme }) => size || `${theme.fonts.size.normal}px`};
-  line-height: ${({ lineHeight, theme }) =>
-    lineHeight || `${Math.floor(theme.fonts.size.normal * 1.5)}px`};
-  font-weight: ${({ weight, theme }) => weight || theme.fonts.weight.normal};
+  font-size: ${({ size, theme }) => px(size || theme.fonts.size.normal)};
+  line-height: ${({ lineHeight, size, theme }) =>
+    px(lineHeight || Math.floor((size || theme.fonts.size.normal) * 1.5))};
+  font-weight: ${({ weight = 'normal', theme }) => theme.fonts.weight[weight]};
   & strong {
     font-weight: ${({ theme }) => theme.fonts.weight.bold};
   }
