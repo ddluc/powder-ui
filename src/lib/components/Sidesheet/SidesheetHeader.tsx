@@ -1,4 +1,5 @@
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../styled';
 
 export interface SidesheetHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

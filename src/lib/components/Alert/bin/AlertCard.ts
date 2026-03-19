@@ -1,4 +1,5 @@
-import styled, { css, Theme } from 'styled-components';
+import { css, Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import animations from './animations';
 import { AlertPaletteItem } from './Palette';
 

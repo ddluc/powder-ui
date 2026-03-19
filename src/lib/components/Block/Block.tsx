@@ -1,6 +1,7 @@
 /* eslint-disable react/display-name */
 import React, { forwardRef } from 'react';
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../styled';
 import { BaseCSSProperties } from '../../types';
 import baseCSS from './mixins/baseCSS';
 

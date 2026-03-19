@@ -1,4 +1,5 @@
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import { px } from '../../../util';
 import { TextProperties } from '../types';
 import { AbstractTextStyles } from './AbstractText';

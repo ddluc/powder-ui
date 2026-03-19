@@ -1,4 +1,5 @@
-import styled, { css, Theme } from 'styled-components';
+import { css, Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import animations, { OVERLAY_ANIMATION_DURATION } from './animations';
 import { OverlayState } from '../../../types';
 

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { getOutline, px } from '../../../util';
+import { styled } from '../../../styled';
 
 // Example component Props
 export interface Props {

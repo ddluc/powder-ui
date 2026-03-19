@@ -1,5 +1,6 @@
 /* eslint-disable indent */
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../../styled';
 
 export { ContainerWithRef as Container } from './Container';
 

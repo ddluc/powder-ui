@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../../styled';
 
 export const ButtonText = styled.span`
   overflow: hidden;

@@ -1,7 +1,8 @@
 /* eslint-disable react/display-name */
 
 import React from 'react';
-import styled, { css, Theme } from 'styled-components';
+import { css, Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import animations from './animation';
 import { OverlayState } from '../../../types';
 

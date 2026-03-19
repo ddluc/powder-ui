@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
+import { styled } from '../../../styled';
 import { Flex } from '../../Flex';
 import { Block } from '../../Block';
 import animations from './animations';

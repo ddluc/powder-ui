@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../styled';
 
 interface Props {
   border?: boolean;

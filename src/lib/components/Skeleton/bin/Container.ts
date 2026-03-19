@@ -1,4 +1,5 @@
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../../styled';
 
 export interface Props {
   type: 'circle' | 'box';

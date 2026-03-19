@@ -1,3 +1,3 @@
-import styled from 'styled-components';
+import { styled } from '../../../styled';
 
 export const MainImage = styled.img``;

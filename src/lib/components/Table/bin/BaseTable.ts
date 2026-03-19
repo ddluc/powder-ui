@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import styled from 'styled-components';
+import { styled } from '../../../styled';
 import { px } from '../../../util';
 
 export type Props = {
