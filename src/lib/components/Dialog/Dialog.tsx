@@ -13,6 +13,7 @@ export interface Props {
   footer?: boolean;
   intent?: 'success' | 'danger' | 'warning' | 'none';
   label?: string;
+  labelledBy?: string;
   confirmIcon?: React.ReactNode;
   confirmText?: string;
   cancelText?: string;
@@ -29,6 +30,7 @@ const Dialogue = (props: Props): JSX.Element => {
     intent = 'none',
     footer = true,
     label = 'dialog',
+    labelledBy,
     confirmIcon,
     confirmText = 'Confirm',
     cancelText = 'Cancel',
@@ -61,7 +63,7 @@ const Dialogue = (props: Props): JSX.Element => {
   return (
     <Overlay preventScroll show={show} onClose={onClose}>
       {({ state }) => (
-        <Container label={label} state={state}>
+        <Container label={label} labelledBy={labelledBy} state={state}>
           <Block position="absolute" top="10px" right="10px">
             <Button
               type="button"

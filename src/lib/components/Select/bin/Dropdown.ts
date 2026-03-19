@@ -1,4 +1,5 @@
-import styled, { Theme, css } from 'styled-components';
+import { Theme, css } from 'styled-components';
+import { styled } from '../../../styled';
 import animations from './animations';
 
 type DropdownProps = {

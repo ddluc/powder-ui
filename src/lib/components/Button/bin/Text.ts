@@ -1,12 +1,7 @@
-import styled from 'styled-components';
+import { styled } from '../../../styled';
 
-type Props = {
-  align: 'left' | 'center';
-};
-
-export const ButtonText = styled.span<Props>`
+export const ButtonText = styled.span`
   overflow: hidden;
-  text-align: ${({ align }) => align};
   text-overflow: ellipsis;
   white-space: nowrap;
 `;

@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable indent */
 
-import styled from 'styled-components';
+import { styled } from '../../../styled';
 import { DefaultButton } from './DefaultButton';
 import { transparentize } from '../../../util';
 

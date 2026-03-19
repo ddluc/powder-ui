@@ -1,4 +1,5 @@
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import { BadgePaletteItem } from './Palette';
 import { px } from '../../../util';
 

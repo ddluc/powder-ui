@@ -102,6 +102,8 @@ const TextInput = forwardRef<HTMLInputElement, Props>((props: Props, ref): JSX.E
         <Input
           id={name}
           aria-label={label}
+          aria-invalid={hasError()}
+          aria-describedby={error || help ? `${name}-message` : undefined}
           disabled={disabled}
           placeholder={animated ? '' : placeholder}
           error={hasError()}
@@ -115,7 +117,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>((props: Props, ref): JSX.E
           {...baseProps}
         />
       </Label>
-      {!condensed && <FormMessage error={error} touched={touched} help={help} />}
+      {!condensed && <FormMessage id={`${name}-message`} error={error} touched={touched} help={help} />}
     </Block>
   );
 });

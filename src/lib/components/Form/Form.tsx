@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import styled from 'styled-components';
+import { styled } from '../../styled';
 
 const Form = styled.form``;
 

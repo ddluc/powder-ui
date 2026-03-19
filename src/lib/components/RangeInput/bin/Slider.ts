@@ -1,10 +1,12 @@
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import { px, getOutline } from '../../../util';
 
 export type Props = {
   thumbSize: number;
   error?: boolean;
   disabled?: boolean;
+  margin?: boolean;
 };
 
 const getThumbColor = (theme: Theme, error: boolean, disabled: boolean) => {
@@ -30,7 +32,7 @@ const getRailColor = (theme: Theme, error: boolean, disabled: boolean) => {
 export const Slider = styled.input<Props>`
   -webkit-appearance: none;
   appearance: none;
-  margin: 20px 0px 0px 0px;
+  margin: ${({ margin }) => (margin ? '20px 0px 0px 0px' : '10px 0px 0px 0px')};
   width: 100%;
   height: 8px;
   background: ${({ theme, error, disabled }) => getRailColor(theme, error, disabled)};

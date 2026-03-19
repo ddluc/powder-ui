@@ -98,7 +98,7 @@ const Toggle = (props: Props): JSX.Element => {
             value={value}
             checked={on}
             disabled={disabled}
-            aria-label="toggle"
+            aria-label={label}
             aria-invalid={!!(touched && error)}
             onChange={() => handleChange()}
             onFocus={handleFocus}

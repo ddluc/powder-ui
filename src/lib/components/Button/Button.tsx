@@ -1,5 +1,7 @@
 import React from 'react';
 import { Skeleton, isSkeleton, BaseSkeletonProps } from '../Skeleton';
+import { Tooltip } from '../Tooltip';
+import type { Props as TooltipProps } from '../Tooltip/Tooltip';
 import { DefaultButton } from './bin/DefaultButton';
 import { IntentButton } from './bin/IntentButton';
 import { SecondaryButton } from './bin/SecondaryButton';
@@ -15,7 +17,7 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   text?: string;
   icon?: React.ReactNode;
   iconPosition?: 'right' | 'left';
-  iconSize?: 'sm' | 'md' | 'lg';
+  iconSize?: 'sm' | 'lg';
   disabled?: boolean;
   fluid?: boolean;
   color?: string;
@@ -25,9 +27,11 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   border?: string;
   radius?: string;
   height?: number;
+  size?: 'sm' | 'lg';
   width?: number;
-  alignment?: string;
   fixed?: boolean;
+  tooltip?: string;
+  tooltipPlacement?: TooltipProps['placement'];
 }
 
 interface SkeletonProps extends BaseSkeletonProps {
@@ -57,94 +61,128 @@ const Button = (props: Props): JSX.Element => {
     border = null,
     radius = null,
     height = null,
+    size = 'sm',
     width = null,
     fixed = false,
+    tooltip,
+    tooltipPlacement,
     ...buttonProps
   } = props;
 
-  const renderButtonContent = (): JSX.Element => (
-    <>
-      {icon && <ButtonIcon size={iconSize}>{icon}</ButtonIcon>}
-      {text && <ButtonText align={align}>{text}</ButtonText>}
-    </>
-  );
+  const alignment = (!text && icon) || align === 'center' ? 'center' : undefined;
 
-  if (intent && intent !== 'none') {
+  const iconPixelSize = iconSize === 'lg' ? '24px' : '16px';
+
+  const renderButtonContent = (): JSX.Element => {
+    const sizedIcon = React.isValidElement(icon)
+      ? React.cloneElement(icon, { size: iconPixelSize } as any)
+      : icon;
+
     return (
-      <IntentButton
+      <>
+        {sizedIcon && <ButtonIcon size={iconSize}>{sizedIcon}</ButtonIcon>}
+        {text && <ButtonText>{text}</ButtonText>}
+      </>
+    );
+  };
+
+  const renderButton = (): JSX.Element => {
+    if (intent && intent !== 'none') {
+      return (
+        <IntentButton
+          color={color}
+          textColor={textColor}
+          intent={intent}
+          variation={variation}
+          textSize={textSize}
+          height={height}
+          size={size}
+          width={width}
+          border={border}
+          radius={radius}
+          alignment={alignment}
+          type={type}
+          fixed={fixed}
+          {...buttonProps}
+        >
+          {renderButtonContent()}
+        </IntentButton>
+      );
+    }
+
+    if (variation === 'secondary') {
+      return (
+        <SecondaryButton
+          color={color}
+          textColor={textColor}
+          textSize={textSize}
+          width={width}
+          height={height}
+          size={size}
+          border={border}
+          radius={radius}
+          alignment={alignment}
+          type={type}
+          fixed={fixed}
+          {...buttonProps}
+        >
+          {renderButtonContent()}
+        </SecondaryButton>
+      );
+    }
+
+    if (variation === 'minimal') {
+      return (
+        <MinimalButton
+          color={color}
+          textColor={textColor}
+          textSize={textSize}
+          width={width}
+          size={size}
+          border={border}
+          radius={radius}
+          alignment={alignment}
+          type={type}
+          fixed={fixed}
+          {...buttonProps}
+        >
+          {renderButtonContent()}
+        </MinimalButton>
+      );
+    }
+
+    return (
+      <DefaultButton
         color={color}
         textColor={textColor}
-        intent={intent}
-        variation={variation}
         textSize={textSize}
-        height={height}
-        width={width}
         border={border}
         radius={radius}
+        height={height}
+        size={size}
+        width={width}
+        alignment={alignment}
         type={type}
         fixed={fixed}
         {...buttonProps}
-        {...buttonProps}
       >
         {renderButtonContent()}
-      </IntentButton>
+      </DefaultButton>
     );
-  }
+  };
 
-  if (variation === 'secondary') {
+  const button = renderButton();
+
+  if (tooltip) {
+    const isTop = !tooltipPlacement || tooltipPlacement === 'top';
     return (
-      <SecondaryButton
-        color={color}
-        textColor={textColor}
-        textSize={textSize}
-        width={width}
-        height={height}
-        border={border}
-        radius={radius}
-        type={type}
-        fixed={fixed}
-        {...buttonProps}
-      >
-        {renderButtonContent()}
-      </SecondaryButton>
+      <Tooltip content={tooltip} placement={tooltipPlacement} offset={isTop ? 2 : 0}>
+        {button}
+      </Tooltip>
     );
   }
 
-  if (variation === 'minimal') {
-    return (
-      <MinimalButton
-        color={color}
-        textColor={textColor}
-        textSize={textSize}
-        width={width}
-        border={border}
-        radius={radius}
-        height={height}
-        type={type}
-        fixed={fixed}
-        {...buttonProps}
-      >
-        {renderButtonContent()}
-      </MinimalButton>
-    );
-  }
-
-  return (
-    <DefaultButton
-      color={color}
-      textColor={textColor}
-      textSize={textSize}
-      border={border}
-      radius={radius}
-      height={height}
-      width={width}
-      type={type}
-      fixed={fixed}
-      {...buttonProps}
-    >
-      {renderButtonContent()}
-    </DefaultButton>
-  );
+  return button;
 };
 
 // Export the component as the default export

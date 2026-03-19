@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import styled, { Theme } from 'styled-components';
+import { Theme } from 'styled-components';
+import { styled } from '../../../styled';
 import { px } from '../../../util';
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
   position: string;
   error?: boolean;
   disabled: boolean;
+  show?: boolean;
 };
 
 const getIndicatorColor = (theme: Theme, error: boolean, disabled: boolean) => {
@@ -17,7 +19,7 @@ const getIndicatorColor = (theme: Theme, error: boolean, disabled: boolean) => {
 };
 
 export const Indicator = styled.div<Props>`
-  display: flex;
+  display: ${({ show }) => (show ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
   position: relative;

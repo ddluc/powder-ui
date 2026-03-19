@@ -11,6 +11,7 @@ import { TableSkeletonProps } from './bin/Skeleton';
 // If additional custom types are needed,
 // add those to a types.ts file in the component directory
 export interface BaseProps<T = object> extends BaseTableProps {
+  'aria-label'?: string;
   rows: TableDataRow<T>[];
   columns: TableDataColumn[];
   sort?: string;
@@ -47,6 +48,7 @@ const Table = (props: Props): JSX.Element => {
     asc,
     desc,
     children,
+    'aria-label': ariaLabel,
     spacing = 4,
     alternate = true,
     gridlines = false,
@@ -108,6 +110,7 @@ const Table = (props: Props): JSX.Element => {
 
   return (
     <BaseTable
+      aria-label={ariaLabel}
       spacing={spacing}
       scroll={scroll}
       scrollbar={scrollbar}

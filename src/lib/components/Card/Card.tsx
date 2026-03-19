@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '../../styled';
 import { BaseCSSProperties, ElevationLevel } from '../../types';
 import { baseCSS } from '../Block';
 import { px, transparentize } from '../../util';

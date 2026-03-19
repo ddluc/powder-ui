@@ -1,7 +1,8 @@
 /* eslint-disable react/display-name */
 
 import React from 'react';
-import styled, { Theme, css } from 'styled-components';
+import { Theme, css } from 'styled-components';
+import { styled } from '../../../styled';
 import animations from './animation';
 import { OverlayState } from '../../../types';
 
@@ -9,6 +10,7 @@ type ContainerProps = {
   state: OverlayState;
   children?: React.ReactNode;
   label?: string;
+  labelledBy?: string;
 };
 
 export interface ThemedProps extends ContainerProps {
@@ -48,9 +50,15 @@ export const Container = styled.aside<ThemedProps>`
 `;
 
 export const ContainerWithRef = React.forwardRef<HTMLDivElement, ContainerProps>(
-  ({ children, state, label }, ref) => (
+  ({ children, state, label, labelledBy }, ref) => (
     <div ref={ref}>
-      <Container state={state} aria-label={label} aria-modal="true" role="dialog">
+      <Container
+        state={state}
+        aria-label={label}
+        aria-labelledby={labelledBy}
+        aria-modal="true"
+        role="dialog"
+      >
         {children}
       </Container>
     </div>
