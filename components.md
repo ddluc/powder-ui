@@ -1191,6 +1191,52 @@ skeleton?: boolean
 
 ---
 
+## Tooltip
+
+Hover/focus/click-triggered text bubble anchored to a trigger element. Uses CSS absolute positioning — will be clipped by `overflow: hidden` parent containers.
+
+```tsx
+import { Tooltip } from 'powder-ui';
+
+// Text shown inside the bubble
+content: string
+
+// Which side the bubble appears on — default 'top'
+placement?: 'top' | 'bottom' | 'left' | 'right'
+
+// What interaction shows/hides the tooltip — default 'hover-focus'
+trigger?: 'hover' | 'focus' | 'click' | 'hover-focus'
+
+// Delay before showing in ms — default 0
+delay?: number
+
+// Bubble background color — defaults to theme.palette.neutral[4]
+color?: string
+
+// Bubble text color — defaults to theme.palette.foreground
+textColor?: string
+
+// The element the tooltip wraps — receives the event handlers
+children: ReactNode
+```
+
+```tsx
+// Examples
+<Tooltip content="Save your changes">
+  <Button icon={<SaveIcon />} aria-label="Save" />
+</Tooltip>
+
+<Tooltip content="Copied!" trigger="click" placement="right">
+  <button>Copy</button>
+</Tooltip>
+
+<Tooltip content="Danger zone" color={theme.palette.danger.main} textColor="#fff">
+  <Badge text="!" type="danger" />
+</Tooltip>
+```
+
+---
+
 ## Palette
 
 Dev/documentation-only component. Renders all theme palette swatches in a scrollable view. No props.

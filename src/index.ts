@@ -57,6 +57,7 @@ export { Spacer, SpacerProps } from './lib/components/Spacer';
 export { default as Table, TableProps } from './lib/components/Table';
 export { TextInput, TextInputProps } from './lib/components/TextInput';
 export { Toggle, ToggleProps } from './lib/components/Toggle';
+export { Tooltip, TooltipProps } from './lib/components/Tooltip';
 export { Typography, TextProps } from './lib/components/Typography';
 
 /** Export Types */
