@@ -1,5 +1,8 @@
 import isPropValid from '@emotion/is-prop-valid';
 
-// Only forward props that are valid HTML attributes.
-// This automatically handles any custom styled-component props without needing a manual denylist.
-export const shouldForwardProp = (prop: string) => isPropValid(prop);
+// Valid HTML attributes that are repurposed as custom styled-component props
+// and should not be forwarded to the DOM.
+const customPropOverrides = ['height', 'width', 'color', 'size', 'border', 'align'];
+
+export const shouldForwardProp = (prop: string) =>
+  isPropValid(prop) && !customPropOverrides.includes(prop);
