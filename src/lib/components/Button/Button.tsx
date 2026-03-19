@@ -1,5 +1,7 @@
 import React from 'react';
 import { Skeleton, isSkeleton, BaseSkeletonProps } from '../Skeleton';
+import { Tooltip } from '../Tooltip';
+import type { Props as TooltipProps } from '../Tooltip/Tooltip';
 import { DefaultButton } from './bin/DefaultButton';
 import { IntentButton } from './bin/IntentButton';
 import { SecondaryButton } from './bin/SecondaryButton';
@@ -28,6 +30,8 @@ export interface BaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   size?: 'sm' | 'lg';
   width?: number;
   fixed?: boolean;
+  tooltip?: string;
+  tooltipPlacement?: TooltipProps['placement'];
 }
 
 interface SkeletonProps extends BaseSkeletonProps {
@@ -60,6 +64,8 @@ const Button = (props: Props): JSX.Element => {
     size = 'sm',
     width = null,
     fixed = false,
+    tooltip,
+    tooltipPlacement,
     ...buttonProps
   } = props;
 
@@ -80,88 +86,102 @@ const Button = (props: Props): JSX.Element => {
     );
   };
 
-  if (intent && intent !== 'none') {
+  const renderButton = (): JSX.Element => {
+    if (intent && intent !== 'none') {
+      return (
+        <IntentButton
+          color={color}
+          textColor={textColor}
+          intent={intent}
+          variation={variation}
+          textSize={textSize}
+          height={height}
+          size={size}
+          width={width}
+          border={border}
+          radius={radius}
+          alignment={alignment}
+          type={type}
+          fixed={fixed}
+          {...buttonProps}
+        >
+          {renderButtonContent()}
+        </IntentButton>
+      );
+    }
+
+    if (variation === 'secondary') {
+      return (
+        <SecondaryButton
+          color={color}
+          textColor={textColor}
+          textSize={textSize}
+          width={width}
+          height={height}
+          size={size}
+          border={border}
+          radius={radius}
+          alignment={alignment}
+          type={type}
+          fixed={fixed}
+          {...buttonProps}
+        >
+          {renderButtonContent()}
+        </SecondaryButton>
+      );
+    }
+
+    if (variation === 'minimal') {
+      return (
+        <MinimalButton
+          color={color}
+          textColor={textColor}
+          textSize={textSize}
+          width={width}
+          size={size}
+          border={border}
+          radius={radius}
+          alignment={alignment}
+          type={type}
+          fixed={fixed}
+          {...buttonProps}
+        >
+          {renderButtonContent()}
+        </MinimalButton>
+      );
+    }
+
     return (
-      <IntentButton
+      <DefaultButton
         color={color}
         textColor={textColor}
-        intent={intent}
-        variation={variation}
         textSize={textSize}
+        border={border}
+        radius={radius}
         height={height}
         size={size}
         width={width}
-        border={border}
-        radius={radius}
         alignment={alignment}
         type={type}
         fixed={fixed}
         {...buttonProps}
       >
         {renderButtonContent()}
-      </IntentButton>
+      </DefaultButton>
     );
-  }
+  };
 
-  if (variation === 'secondary') {
+  const button = renderButton();
+
+  if (tooltip) {
     return (
-      <SecondaryButton
-        color={color}
-        textColor={textColor}
-        textSize={textSize}
-        width={width}
-        height={height}
-        size={size}
-        border={border}
-        radius={radius}
-        alignment={alignment}
-        type={type}
-        fixed={fixed}
-        {...buttonProps}
-      >
-        {renderButtonContent()}
-      </SecondaryButton>
+      <Tooltip content={tooltip} placement={tooltipPlacement}>
+        {button}
+      </Tooltip>
     );
   }
 
-  if (variation === 'minimal') {
-    return (
-      <MinimalButton
-        color={color}
-        textColor={textColor}
-        textSize={textSize}
-        width={width}
-        size={size}
-        border={border}
-        radius={radius}
-        alignment={alignment}
-        type={type}
-        fixed={fixed}
-        {...buttonProps}
-      >
-        {renderButtonContent()}
-      </MinimalButton>
-    );
-  }
-
-  return (
-    <DefaultButton
-      color={color}
-      textColor={textColor}
-      textSize={textSize}
-      border={border}
-      radius={radius}
-      height={height}
-      size={size}
-      width={width}
-      alignment={alignment}
-      type={type}
-      fixed={fixed}
-      {...buttonProps}
-    >
-      {renderButtonContent()}
-    </DefaultButton>
-  );
+  return button;
 };
 
 // Export the component as the default export

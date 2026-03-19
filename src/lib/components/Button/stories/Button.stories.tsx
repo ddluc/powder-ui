@@ -174,3 +174,11 @@ asSkeleton.args = {
   width: 120,
   height: 40
 };
+
+export const withTooltip = Template.bind({});
+withTooltip.args = {
+  text: 'Save',
+  tooltip: 'Save your changes',
+  tooltipPlacement: 'right'
+};
+withTooltip.storyName = 'With Tooltip';

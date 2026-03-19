@@ -65,7 +65,14 @@ const Tooltip = ({
       {...clickHandlers}
     >
       {children}
-      <TooltipBubble id={bubbleId} role="tooltip" placement={placement} visible={isVisible} color={color} textColor={textColor}>
+      <TooltipBubble
+        id={bubbleId}
+        role="tooltip"
+        placement={placement}
+        visible={isVisible}
+        color={color}
+        textColor={textColor}
+      >
         {content}
       </TooltipBubble>
     </TooltipWrapper>

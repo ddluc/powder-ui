@@ -474,6 +474,12 @@ fixed?: boolean
 
 disabled?: boolean
 
+// Tooltip text — automatically wraps the button in a Tooltip when set
+tooltip?: string
+
+// Which side the tooltip appears on — default 'top'
+tooltipPlacement?: 'top' | 'bottom' | 'left' | 'right'
+
 // Background color override (bypasses intent/variation)
 color?: string
 
