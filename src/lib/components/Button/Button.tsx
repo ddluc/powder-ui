@@ -174,8 +174,9 @@ const Button = (props: Props): JSX.Element => {
   const button = renderButton();
 
   if (tooltip) {
+    const isTop = !tooltipPlacement || tooltipPlacement === 'top';
     return (
-      <Tooltip content={tooltip} placement={tooltipPlacement}>
+      <Tooltip content={tooltip} placement={tooltipPlacement} offset={isTop ? 2 : 0}>
         {button}
       </Tooltip>
     );

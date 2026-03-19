@@ -5,14 +5,16 @@ interface BubbleProps {
   visible: boolean;
   color?: string;
   textColor?: string;
+  offset?: number;
 }
 
-const placementStyles = ({ placement, color, theme }: BubbleProps & { theme: any }) => {
+const placementStyles = ({ placement, color, offset = 0, theme }: BubbleProps & { theme: any }) => {
   const bg = color || theme.palette.neutral[4];
+  const gap = 10 + offset;
   switch (placement) {
     case 'bottom':
       return css`
-        top: calc(100% + 12px);
+        top: calc(100% + ${gap}px);
         left: 50%;
         transform: translateX(-50%);
         &::after {
@@ -27,7 +29,7 @@ const placementStyles = ({ placement, color, theme }: BubbleProps & { theme: any
       `;
     case 'left':
       return css`
-        right: calc(100% + 12px);
+        right: calc(100% + ${gap}px);
         top: 50%;
         transform: translateY(-50%);
         &::after {
@@ -42,7 +44,7 @@ const placementStyles = ({ placement, color, theme }: BubbleProps & { theme: any
       `;
     case 'right':
       return css`
-        left: calc(100% + 12px);
+        left: calc(100% + ${gap}px);
         top: 50%;
         transform: translateY(-50%);
         &::after {
@@ -58,7 +60,7 @@ const placementStyles = ({ placement, color, theme }: BubbleProps & { theme: any
     case 'top':
     default:
       return css`
-        bottom: calc(100% + 12px);
+        bottom: calc(100% + ${gap}px);
         left: 50%;
         transform: translateX(-50%);
         &::after {

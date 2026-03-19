@@ -108,6 +108,16 @@ withOverflowText.args = {
   text: 'This is a badge with some really long instructions which breaks the layout'
 };
 
+export const withTooltip = IconTemplate.bind({});
+withTooltip.args = {
+  text: '',
+  iconType: 'alert',
+  type: 'warning',
+  tooltip: 'Needs your attention',
+  tooltipPlacement: 'right'
+};
+withTooltip.storyName = 'With Tooltip';
+
 export const asSkeleton = Template.bind({});
 asSkeleton.args = {
   skeleton: true,

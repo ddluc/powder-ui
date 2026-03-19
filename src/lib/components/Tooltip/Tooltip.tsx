@@ -8,6 +8,7 @@ export interface Props {
   delay?: number;
   color?: string;
   textColor?: string;
+  offset?: number;
   children: React.ReactNode;
 }
 
@@ -18,6 +19,7 @@ const Tooltip = ({
   delay = 0,
   color,
   textColor,
+  offset = 0,
   children
 }: Props): JSX.Element => {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,6 +74,7 @@ const Tooltip = ({
         visible={isVisible}
         color={color}
         textColor={textColor}
+        offset={offset}
       >
         {content}
       </TooltipBubble>

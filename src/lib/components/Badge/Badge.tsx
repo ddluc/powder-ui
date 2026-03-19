@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTheme, Theme } from 'styled-components';
 import { Skeleton, isSkeleton, BaseSkeletonProps } from '../Skeleton';
+import { Tooltip } from '../Tooltip';
+import type { Props as TooltipProps } from '../Tooltip/Tooltip';
 import { BadgePaletteItem, getBadgePallete } from './bin/Palette';
 import { DefaultBadge, BadgeIcon, BadgeText } from './bin';
 
@@ -20,6 +22,8 @@ export interface BaseProps {
   colors?: BadgePaletteItem;
   disabled?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  tooltip?: string;
+  tooltipPlacement?: TooltipProps['placement'];
 }
 
 interface SkeletonProps extends BaseSkeletonProps {
@@ -41,7 +45,9 @@ const Badge = (props: Props): JSX.Element => {
     colors = null,
     type = 'primary',
     disabled = false,
-    onClick = null
+    onClick = null,
+    tooltip,
+    tooltipPlacement
   } = props;
 
   const theme: Theme = useTheme();
@@ -50,7 +56,7 @@ const Badge = (props: Props): JSX.Element => {
   const isClickable = onClick !== null;
   const hasText = text !== '';
 
-  return (
+  const badge = (
     <DefaultBadge
       as={isClickable ? 'button' : 'div'}
       type={isClickable ? 'button' : undefined}
@@ -65,6 +71,16 @@ const Badge = (props: Props): JSX.Element => {
       {text && <BadgeText>{text}</BadgeText>}
     </DefaultBadge>
   );
+
+  if (tooltip) {
+    return (
+      <Tooltip content={tooltip} placement={tooltipPlacement}>
+        {badge}
+      </Tooltip>
+    );
+  }
+
+  return badge;
 };
 
 export default Badge;

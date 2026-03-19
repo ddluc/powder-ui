@@ -45,10 +45,10 @@ export const AllPlacements: ComponentStory<typeof Tooltip> = () => (
     <Tooltip content="Left tooltip" placement="left">
       <Button text="Left" />
     </Tooltip>
-    <Tooltip content="Top tooltip" placement="top">
+    <Tooltip content="Top tooltip" placement="top" offset={2}>
       <Button text="Top" />
     </Tooltip>
-    <Tooltip content="Bottom tooltip" placement="bottom">
+    <Tooltip content="Bottom tooltip" placement="bottom" offset={-2}>
       <Button text="Bottom" />
     </Tooltip>
     <Tooltip content="Right tooltip" placement="right">
