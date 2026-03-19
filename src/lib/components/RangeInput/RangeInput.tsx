@@ -102,6 +102,7 @@ const RangeInput = (props: Props): JSX.Element => {
             position={tooltipPosition}
             error={!!(touched && error)}
             disabled={disabled}
+            aria-hidden="true"
           >
             <span>
               {value} {units}
@@ -117,6 +118,9 @@ const RangeInput = (props: Props): JSX.Element => {
             thumbSize={thumbSize}
             margin={indicator}
             value={value}
+            aria-valuenow={value}
+            aria-valuemin={min}
+            aria-valuemax={max}
             error={!!(touched && error)}
             disabled={!!disabled}
             onChange={onChange}

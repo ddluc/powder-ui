@@ -138,6 +138,7 @@ const Select = forwardRef<HTMLSelectElement, Props>((props: Props, ref): JSX.Ele
             id={name}
             disabled={disabled}
             error={hasError()}
+            aria-describedby={error || help ? `${name}-message` : undefined}
             onChange={onChangeHandler}
             onFocus={onFocusHandler}
             onBlur={onBlurHandler}
@@ -152,7 +153,9 @@ const Select = forwardRef<HTMLSelectElement, Props>((props: Props, ref): JSX.Ele
             <ArrowIcon height="16px" width="16px" />
           </Dropdown>
         </Block>
-        {!condensed && <FormMessage error={error} touched={touched} help={help} />}
+        {!condensed && (
+          <FormMessage id={`${name}-message`} error={error} touched={touched} help={help} />
+        )}
       </Label>
     </Block>
   );

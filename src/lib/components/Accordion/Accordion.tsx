@@ -15,8 +15,14 @@ export interface Props {
   onClick?: (id: string) => void;
 }
 
+let _accordionCount = 0;
+
 const Accordion = (props: Props): JSX.Element => {
   const { id, title, open, controlled, children, elevation, onClick } = props;
+
+  const [stableId] = React.useState(() => `accordion-${++_accordionCount}`);
+  const accordionId = id || stableId;
+  const contentId = `${accordionId}-content`;
 
   const contentRef = React.useRef<HTMLDivElement>(null); // Ref for the content div
   const [height, setHeight] = React.useState(0);
@@ -24,7 +30,7 @@ const Accordion = (props: Props): JSX.Element => {
 
   const handleHeaderClick = () => {
     if (controlled) {
-      onClick(id);
+      onClick(accordionId);
     } else {
       setIsOpen(!isOpen);
     }
@@ -41,13 +47,23 @@ const Accordion = (props: Props): JSX.Element => {
 
   return (
     <Card elevation={elevation} padding={['0px', '0px', '0px', '0px']}>
-      <Header onClick={handleHeaderClick}>
+      <Header
+        onClick={handleHeaderClick}
+        aria-expanded={shouldRenderContent()}
+        aria-controls={contentId}
+      >
         <strong>{title}</strong>
         <Dropdown open={shouldRenderContent()}>
           <ArrowIcon height="16px" width="16px" />
         </Dropdown>
       </Header>
-      <Content ref={contentRef} open={shouldRenderContent()} maxHeight={height}>
+      <Content
+        ref={contentRef}
+        id={contentId}
+        role="region"
+        open={shouldRenderContent()}
+        maxHeight={height}
+      >
         {children}
       </Content>
     </Card>

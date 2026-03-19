@@ -33,6 +33,7 @@ const Sidesheet = (props: Props): JSX.Element => {
             <Button
               type="button"
               variation="minimal"
+              aria-label="Close"
               onClick={onCloseButtonClick}
               iconSize="lg"
               width={34}

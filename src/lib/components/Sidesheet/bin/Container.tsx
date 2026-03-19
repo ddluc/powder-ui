@@ -49,7 +49,7 @@ const Container = styled.aside<ThemedProps>`
 export const ContainerWithRef = React.forwardRef<HTMLDivElement, ContainerProps>(
   ({ children, state }, ref) => (
     <div ref={ref}>
-      <Container state={state} role="presentation" aria-label="sidesheet">
+      <Container state={state} role="complementary" aria-label="sidesheet">
         {children}
       </Container>
     </div>

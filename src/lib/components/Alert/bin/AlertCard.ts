@@ -12,7 +12,7 @@ export interface ThemedProps extends AlertCardProps {
   theme: Theme;
 }
 
-export const AlertCard = styled.div<ThemedProps>`
+export const AlertCard = styled.div.attrs<ThemedProps>({ role: 'alert' })<ThemedProps>`
   min-height: 20px;
   max-width: 320px;
   padding: 20px;

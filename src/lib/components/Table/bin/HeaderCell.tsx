@@ -84,6 +84,12 @@ export const HeaderCell = ({
     return 'flex-start';
   };
 
+  const getAriaSort = (): React.AriaAttributes['aria-sort'] => {
+    if (!sortable) return undefined;
+    if (!isActiveSort()) return 'none';
+    return sortDirection === 'asc' ? 'ascending' : 'descending';
+  };
+
   return (
     <BaseHeaderCell
       width={width}
@@ -91,11 +97,17 @@ export const HeaderCell = ({
       sortable={sortable}
       active={isActiveSort()}
       action={action}
+      aria-sort={getAriaSort()}
     >
       <Flex wrap="nowrap" gap="6px" alignItems="center" justifyContent={getAlignment()}>
         <Block>{children || header}</Block>
         {sortable && (
-          <SortIcon className="icon" isActiveSort={isActiveSort()} sortDirection={sortDirection}>
+          <SortIcon
+            className="icon"
+            isActiveSort={isActiveSort()}
+            sortDirection={sortDirection}
+            aria-hidden="true"
+          >
             {isActiveSort() ? '↑' : '↕'}
           </SortIcon>
         )}

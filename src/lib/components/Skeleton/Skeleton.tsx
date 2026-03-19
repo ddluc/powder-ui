@@ -51,6 +51,9 @@ const Skeleton = (props: Props): JSX.Element => {
 
   return (
     <Container
+      role="status"
+      aria-busy="true"
+      aria-label="Loading"
       height={size || height}
       width={size || width}
       fluid={fluid}

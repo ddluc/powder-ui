@@ -10,6 +10,7 @@ type ContainerProps = {
   state: OverlayState;
   children?: React.ReactNode;
   label?: string;
+  labelledBy?: string;
 };
 
 export interface ThemedProps extends ContainerProps {
@@ -49,9 +50,15 @@ export const Container = styled.aside<ThemedProps>`
 `;
 
 export const ContainerWithRef = React.forwardRef<HTMLDivElement, ContainerProps>(
-  ({ children, state, label }, ref) => (
+  ({ children, state, label, labelledBy }, ref) => (
     <div ref={ref}>
-      <Container state={state} aria-label={label} aria-modal="true" role="dialog">
+      <Container
+        state={state}
+        aria-label={label}
+        aria-labelledby={labelledBy}
+        aria-modal="true"
+        role="dialog"
+      >
         {children}
       </Container>
     </div>

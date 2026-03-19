@@ -2,13 +2,14 @@ import React from 'react';
 import { FormText } from './bin/FormText';
 
 interface Props {
+  id?: string;
   error?: string;
   touched?: boolean;
   help?: string;
 }
 
 const FormMessage = (props: Props): JSX.Element => {
-  const { error, touched, help } = props;
+  const { id, error, touched, help } = props;
 
   const getMessageText = (): string => {
     if (touched && error) return error;
@@ -17,7 +18,7 @@ const FormMessage = (props: Props): JSX.Element => {
   };
 
   return (
-    <FormText error={error} touched={touched} help={help}>
+    <FormText id={id} error={error} touched={touched} help={help}>
       {getMessageText()}
     </FormText>
   );
