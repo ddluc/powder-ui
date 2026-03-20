@@ -141,6 +141,7 @@ const Button = (props: Props): JSX.Element => {
           size={size}
           border={border}
           radius={radius}
+          height={height}
           alignment={alignment}
           type={type}
           fixed={fixed}

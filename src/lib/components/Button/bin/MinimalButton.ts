@@ -25,8 +25,8 @@ export const MinimalButton = styled(DefaultButton)<Props>`
   &:hover {
     border: none;
     box-shadow: none;
-    color: ${({ theme }) => theme.palette.primary.main};
-    fill: ${({ theme }) => theme.palette.primary.main};
+    color: ${({ theme }) => theme.palette.primary.shades[1]};
+    fill: ${({ theme }) => theme.palette.primary.shades[1]};
     cursor: pointer;
   }
 
